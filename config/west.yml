@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: forsongen
-      revision: waterfowl-3.2
+      revision: chocofi
       import: app/west.yml
   self:
     path: config
