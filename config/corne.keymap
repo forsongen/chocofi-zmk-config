@@ -59,7 +59,7 @@
             		compatible = "zmk,behavior-tri-state";
             		label = "SWAPPER";
             		#binding-cells = <0>;
-            		bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            		bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             		ignored-key-positions = <1>;
         	};
 
@@ -82,7 +82,7 @@
      &hm LALT Z     &kp X          &kp C          &kp D          &kp V            &kp K          &kp H          &kp COMMA      &kp DOT        &hm RALT FSLH
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯   
 //                               ╭──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────╮
-                                 &mt LCTRL ESC  &lt NUMBER SPACE  &mt LSHFT ENTER  &hm LSHFT BSPC  &lt SYMBOL SPACE  XXX
+                                 &mt LCMD ESC  &lt NUMBER SPACE  &mt LSHFT ENTER  &hm LSHFT BSPC  &lt SYMBOL SPACE  XXX
 //                               ╰──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────╯
 			>;
 		};
