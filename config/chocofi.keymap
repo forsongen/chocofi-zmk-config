@@ -55,22 +55,13 @@
 			retro-tap;
 		};
 		
-		swapmac: swapper {
+		swap: swapper {
             		compatible = "zmk,behavior-tri-state";
             		label = "SWAPPER";
             		#binding-cells = <0>;
             		bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             		ignored-key-positions = <1>;
         	};
-		
-		swappc: swapper {
-            		compatible = "zmk,behavior-tri-state";
-            		label = "SWAPPER";
-            		#binding-cells = <0>;
-            		bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            		ignored-key-positions = <1>;
-        	};
-
         };
 	
 /* KEYMAP */
@@ -117,9 +108,9 @@
 			label = "NUMBER";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &swappc        &kp HOME       XXX            &kp END        XIV              XXX            &kp N7         &kp N8         &kp N9         XXX
+     &swap          &kp HOME       XXX            &kp END        XIV              XXX            &kp N7         &kp N8         &kp N9         XXX
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &swapmac       &kp LEFT       &kp UP         &kp RIGHT      &kp TAB          XXX            &kp N4         &kp N5         &kp N6         XXX
+     XXX            &kp LEFT       &kp UP         &kp RIGHT      &kp TAB          XXX            &kp N4         &kp N5         &kp N6         XXX
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤ ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
      &caps_word     XXX            &kp DOWN       &kp BSPC       &kp DEL          XXX            &kp N1         &kp N2         &kp N3         PRINT
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯ ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
