@@ -59,17 +59,17 @@
 			retro-tap;
 		};
 		
-		macswap: swapper {
+		macswap: mac_swapper {
             		compatible = "zmk,behavior-tri-state";
-            		label = "SWAPPER";
+            		label = "MACSWAP";
             		#binding-cells = <0>;
             		bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
             		ignored-key-positions = <1>;
         	};
 
-		winswap: swapper {
+		winswap: win_ swapper {
             		compatible = "zmk,behavior-tri-state";
-            		label = "SWAPPER";
+            		label = "WINSWAP";
             		#binding-cells = <0>;
             		bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             		ignored-key-positions = <1>;
