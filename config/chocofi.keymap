@@ -27,7 +27,7 @@
 #define	XIV	&kp LS(F2)
 #define	ZOOMIN	&kp LG(PLUS)
 #define ZOOMOUT	&kp LG(MINUS)
-#define TILDE	&kp LS(NUHS)
+#define TILDE	&kp LS(GRAVE)
 
  /* BEHAVIOURS */
 
