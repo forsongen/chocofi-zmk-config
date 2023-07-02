@@ -107,19 +107,19 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <20 21>;
             bindings = <&kp ESC>;
         };
 
         combo_undo {
             timeout-ms = <50>;
-            key-positions = <3 4>;
+            key-positions = <2 3>;
             bindings = <&kp LG(Z)>;
         };
 
         combo_redo {
             timeout-ms = <50>;
-            key-positions = <23 24>;
+            key-positions = <22 23>;
             bindings = <&kp LS(LG(Z))>;
         };
 
@@ -137,13 +137,13 @@
 
         combo_paste {
             timeout-ms = <50>;
-            key-positions = <22 23>;
+            key-positions = <21 22>;
             bindings = <&kp LG(V)>;
         };
 
         combo_caps {
             timeout-ms = <50>;
-            key-positions = <4 7>;
+            key-positions = <3 6>;
             bindings = <&kp CAPS>;
         };
 
