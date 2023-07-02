@@ -183,7 +183,7 @@
      &hm LGUI Z     &hm RALT X     &kp C          &kp D          &kp V                      &kp K          &kp H          &kp COMMA      &kp DOT        &kp FSLH
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯   
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
-                                 &mt LCTRL ENTER  &lt NAVNUM SPACE  &lt WINSHORT TAB        &lt FUNCTION BSPC  &lt SYMBOL SPACE  &hm LGUI DEL
+                                 &mt LCTRL ENTER  &lt NAVNUM SPACE  &lt SHORTCUT TAB        &lt FUNCTION BSPC  &lt SYMBOL SPACE  &hm LGUI DEL
 //                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯
 			>;
 		};
