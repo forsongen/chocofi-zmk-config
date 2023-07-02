@@ -67,7 +67,7 @@
             		ignored-key-positions = <1>;
         	};
 
-		winswap: win_ swapper {
+		winswap: win_swapper {
             		compatible = "zmk,behavior-tri-state";
             		label = "WINSWAP";
             		#binding-cells = <0>;
