@@ -31,12 +31,17 @@
 
  /* BEHAVIOURS */
 
+
+&mt {
+    hold-while-undecided;
+};
+
 / {
  	behaviors {
 	
-     		ht: hold_tap {
+     		numt: num_tap {
        			compatible = "zmk,behavior-hold-tap";
-			label = "hold_tap";
+			label = "number_tap";
           		#binding-cells = <2>;
             		flavor = "tap-preferred";
             		tapping-term-ms = <200>;
@@ -44,7 +49,7 @@
             		bindings = <&kp>, <&kp>;
 		};
 
-     		mt: mod_tap {
+     		ht: hold_tap {
        			compatible = "zmk,behavior-hold-tap";
 			label = "hold_tap";
           		#binding-cells = <2>;
@@ -139,11 +144,11 @@
 			label = "NUMBER";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     XXX            XXX            &kp HOME       &kp END        &kp PG_UP                  XXX            &ht N7 F7      &ht N8 F8      &ht N9 F9      &ht EQUAL F10
+     XXX            XXX            &kp HOME       &kp END        &kp PG_UP                  XXX            &numt N7 F7    &numt N8 F8    &numt N9 F9    &numt EQUAL F10
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &kp ESC        &kp LEFT       &kp UP         &kp RIGHT      &kp PG_DN                  &kp PLUS       &ht N4 F4      &ht N5 F5      &ht N6 F6      &ht MINUS F11
+     &kp ESC        &kp LEFT       &kp UP         &kp RIGHT      &kp PG_DN                  &kp PLUS       &numt N4 F4    &numt N5 F5    &numt N6 F6    &numt MINUS F11
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     XXX            XXX            &kp DOWN       &kp BSPC       &kp DEL                    &kp ASTRK      &ht N1 F1      &ht N2 F2      &ht N3 F3      &ht FSLH F12
+     XXX            XXX            &kp DOWN       &kp BSPC       &kp DEL                    &kp ASTRK      &numt N1 F1    &numt N2 F2    &numt N3 F3    &numt FSLH F12
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
                                    ___            ___            ___                        &kp BSPC       &kp N0         &kp DOT
