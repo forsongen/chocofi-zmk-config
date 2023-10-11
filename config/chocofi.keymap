@@ -10,116 +10,53 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define MAC		0
+#define UNIX	0
 #define WIN		1
-#define NAVNUM		2
-#define SYMBOL		3
-#define FUNCTION	4
-#define SHORTCUT	5
-
+#define CLR		2
+#define NVNM	3
+#define SYMB	4
+#define FUNC	5
+#define BLUE	6
 
  /* ALIASES */
 
-#define	XXX	&none
-#define	___	&trans
-#define	PRINT	&kp LG(LS(S))
-#define	TAG	&kp RA(N3)
-#define	XIV	&kp LS(F2)
-#define	ZOOMIN	&kp LG(PLUS)
-#define ZOOMOUT	&kp LG(MINUS)
-#define TILDE	&kp LS(GRAVE)
+#define	XXX			&none
+#define	___			&trans
+#define	TASKS		&kp LG(TAB)
+#define	PRINT		&kp LG(LS(S))
+#define TILDE		&kp LS(GRAVE)
+#define	TAG			&kp RA(N3)
+#define GBP			&kp LS(N3)
+#define EUR			&kp RA(N2)
+#define	HYDAELYN	&kp LS(F12)
 
- /* BEHAVIOURS */
-
-
-&mt {
-    hold-while-undecided;
-};
-
-&lt {
-    hold-while-undecided;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <199>;
-    retro-tap;
-};
-
+/* COMBOS */
 
 / {
- 	behaviors {
-	
-     		numt: num_tap {
-       			compatible = "zmk,behavior-hold-tap";
-			label = "number_tap";
-          		#binding-cells = <2>;
-            		flavor = "tap-preferred";
-            		tapping-term-ms = <400>;
-            		quick-tap-ms = <150>;
-            		bindings = <&kp>, <&kp>;
-		};
-
-     		ht: hold_tap {
-       			compatible = "zmk,behavior-hold-tap";
-			label = "hold_tap";
-          		#binding-cells = <2>;
-            		flavor = "hold-preferred";
-            		tapping-term-ms = <200>;
-            		quick-tap-ms = <150>;
-            		bindings = <&kp>, <&kp>;
-			hold-while-undecided;
-		};
-		
-		hm: homerow_mods {
-            		compatible = "zmk,behavior-hold-tap";
-            		label = "HOMEROW_MODS";
-            		#binding-cells = <2>;
-            		tapping-term-ms = <200>;
-            		quick-tap-ms = <199>;
-            		flavor = "tap-preferred";
-            		bindings = <&kp>, <&kp>;
-			retro-tap;
-		};
-		
-		swap: swapper {
-            		compatible = "zmk,behavior-tri-state";
-            		label = "SWAP";
-            		#binding-cells = <0>;
-            		bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
-            		ignored-key-positions = <1>;
-        	};
-
-		gqt: global-quick-tap {
-			compatible = "zmk,behavior-hold-tap";
-  			label = "GLOBAL_QUICK_TAP";
-			#binding-cells = <2>;
-			flavor = "tap-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <125>;
-			global-quick-tap;
-			bindings = <&kp>, <&kp>;
-		};
-
-        };	
-};
-
-/ {
-    combos {
+	combos {
         compatible = "zmk,combos";
 
         combo_esc {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp CAPS>;
+        };
+
+        combo_caps {
             timeout-ms = <50>;
             key-positions = <20 21>;
             bindings = <&kp ESC>;
         };
 
-        combo_undo {
+		combo_undo {
             timeout-ms = <50>;
-            key-positions = <2 3>;
+            key-positions = <21 22>;
             bindings = <&kp LG(Z)>;
         };
 
         combo_redo {
             timeout-ms = <50>;
-            key-positions = <22 23>;
+            key-positions = <23 24>;
             bindings = <&kp LS(LG(Z))>;
         };
 
@@ -137,36 +74,107 @@
 
         combo_paste {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <2 3>;
             bindings = <&kp LG(V)>;
         };
+    };
+};
 
-        combo_caps {
-            timeout-ms = <50>;
-            key-positions = <3 6>;
-            bindings = <&kp CAPS>;
+/* BEHAVIOURS */
+
+
+&mt {
+    hold-while-undecided;
+};
+
+&lt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <199>;
+};
+
+
+/ {
+ 	behaviors {
+
+     	ht: hold_tap {
+       		compatible = "zmk,behavior-hold-tap";
+			label = "hold_tap";
+    		#binding-cells = <2>;
+    		flavor = "hold-preferred";
+    		tapping-term-ms = <200>;
+      		quick-tap-ms = <150>;
+     		bindings = <&kp>, <&kp>;
+			hold-while-undecided;
+		};
+		
+		hm: homerow_mods {
+    		compatible = "zmk,behavior-hold-tap";
+    		label = "HOMEROW_MODS";
+        	#binding-cells = <2>;
+        	tapping-term-ms = <200>;
+           	quick-tap-ms = <199>;
+        	flavor = "tap-preferred";
+          	bindings = <&kp>, <&kp>;
+			retro-tap;
+		};
+		
+		swap: swapper {
+        	compatible = "zmk,behavior-tri-state";
+        	label = "SWAP";
+          	#binding-cells = <0>;
+           	bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+          	ignored-key-positions = <1>;
         };
 
-    };
+		gqt: global-quick-tap {
+			compatible = "zmk,behavior-hold-tap";
+  			label = "GLOBAL_QUICK_TAP";
+			#binding-cells = <2>;
+			flavor = "tap-preferred";
+			tapping-term-ms = <200>;
+			quick-tap-ms = <125>;
+			global-quick-tap;
+			bindings = <&kp>, <&kp>;
+		};
+
+		td_q: tap_dance_quiet {
+        	compatible = "zmk,behavior-tap-dance";
+        	label = "DOWN_MUTE";
+        	#binding-cells = <0>;
+        	tapping-term-ms = <200>;
+        	bindings = <&kp C_VOL_DN>, <&kp C_MUTE>;
+        };
+
+		grave_m: grave_macro {
+            compatible = "zmk,behavior-hold-tap";
+            label = "GRAVE_MACRO";
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&triple_grave_macro>, <&kp>;
+        };
+    };	
+};
 
 /* KEYMAP */
 	
 	keymap {
 		compatible = "zmk,keymap";
 
-		mac_layer {
+		unix_layer {
 
-			label = "MAC";
+			label = "UNIX";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &kp Q          &kp W          &kp F          &hm LSHIFT P   &kp B                      &kp J          &hm RSHIFT L   &kp U          &kp Y          &kp QUOT
+     &kp Q          &kp W          &kp F          &hm LSHIFT P   &hm BLUE B                 &kp J          &hm RSHIFT L   &kp U          &kp Y          &kp QUOT
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     
      &kp A          &kp R          &kp S          &kp T          &kp G                      &kp M          &kp N          &kp E          &kp I          &kp O
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
-     &hm LCTRL Z    &hm RALT X     &kp C          &kp D          &kp V                      &kp K          &kp H          &kp COMMA      &kp DOT        &kp FSLH
+     &hm LCTRL Z    &hm LALT X     &hm LGUI C     &kp D          &kp V                      &kp K          &kp H         &hm LGUI COMMA  &hm LALT DOT   &hm LCTRL FSLH
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯   
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
-                                 &mt LCMD ENTER  &lt NAVNUM SPACE  &lt SHORTCUT TAB         &lt FUNCTION BSPC  &lt SYMBOL SPACE  &hm LCTRL DEL
+                                 &mt LGUI ENTER  &lt NVNM SPACE  &hm LCTRL DEL              &lt FUNC BSPC  &lt SYMB SPACE  &hm LALT TAB
 //                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯
 			>;
 		};
@@ -176,45 +184,62 @@
 			label = "WIN";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &kp Q          &kp W          &kp F          &hm LSHIFT P   &kp B                      &kp J          &hm RSHIFT L   &kp U          &kp Y          &kp QUOT
+     &kp Q          &kp W          &kp F          &hm LSHIFT P   &hm BLUE B                 &kp J          &hm RSHIFT L   &kp U          &kp Y          &kp QUOT
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     
      &kp A          &kp R          &kp S          &kp T          &kp G                      &kp M          &kp N          &kp E          &kp I          &kp O
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
-     &hm LGUI Z     &hm RALT X     &kp C          &kp D          &kp V                      &kp K          &kp H          &kp COMMA      &kp DOT        &kp FSLH
-// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯   
+     &hm LCTRL Z    &hm LALT X     &hm LGUI C     &kp D          &kp V                      &kp K          &kp H          &hm LGUI COMMA  &hm LALT DOT  &hm LCTRL FSLH
+// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
-                                 &mt LCTRL ENTER  &lt NAVNUM SPACE  &lt SHORTCUT TAB        &lt FUNCTION BSPC  &lt SYMBOL SPACE  &hm LGUI DEL
+                                 &mt LCTRL ENTER  &lt NVNM SPACE  &hm LGUI DEL              &lt FUNC BSPC  &lt SYMB SPACE  &hm LALT TAB
 //                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯
 			>;
 		};
 
-		navnum_layer {
+		clr_layer {
+
+			label = "CLEAR";
+			bindings = <
+// ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
+     &kp Q          &kp W          &kp F          &hm LSHIFT P   &kp B                      &kp J          &hm RSHIFT L   &kp U          &kp Y          &kp QUOT
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     
+     &kp A          &kp R          &kp S          &kp T          &kp G                      &kp M          &kp N          &kp E          &kp I          &kp O
+// ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   
+     &kp Z          &kp X          &kp C          &kp D          &kp V                      &kp K          &kp H          &hm LGUI COMMA  &hm LALT DOT  &hm LCTRL FSLH
+// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
+//                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
+                                   &kp ENTER      &lt NVNM SPACE  &kp DEL                   &lt FUNC BSPC  &lt SYMB SPACE  &kp TAB
+//                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯
+			>;
+		};
+
+		nvnm_layer {
 		
 			label = "NAVNUM";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &swap          &kp HOME       ___            &kp END        &kp PG_UP                  XXX            &numt F7 N7    &numt F8 N8    &numt F9 N9    &numt F10 EQUAL
+     &swap          &kp HOME       HYDAELYN       &kp END        &kp PG_UP                  XXX            &kp N7         &kp N8         &kp N9         XXX
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &kp LSHIFT     &kp LEFT       &kp UP         &kp RIGHT      &kp PG_DN                  &kp PLUS       &numt F4 N4    &numt F5 N5    &numt F6 N6    &numt F11 MINUS
+     &kp LSHFT      &kp LEFT       &kp UP         &kp RIGHT      &kp PG_DN                  XXX            &kp N4         &kp N5         &kp N6         &kp MINUS
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     XXX            XXX            &kp DOWN       &kp BSPC       &kp DEL                    &kp ASTRK      &numt F1 N1    &numt F2 N2    &numt F3 N3    &numt F12 FSLH
-// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
+     &kp LG(SPACE)  XXX            &kp DOWN       &kp BSPC       &kp TAB                    XXX            &kp N1         &kp N2         &kp N3         &kp FSLH
+// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
                                    ___            ___            ___                        &kp BSPC       &kp N0         &kp DOT
 //                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯c
 			>;
 		};
 
-		symbol_layer {
+		symb_layer {
 		
 			label = "SYMBOL";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &kp EXCL       &kp AT         &kp HASH        &kp DLLR      &kp PRCNT                  &kp CARET      &kp AMPS       &kp ASTRK      &kp PLUS       &kp EQUAL
+     TILDE          &kp DLLR       &kp PRCNT      &kp AMPS       XXX                        XXX            &kp AT         &kp CARET      TAG            &grave_m 0 GRAVE
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &kp SEMI       &kp COLON      &kp LPAR        &kp RPAR      XXX                        &kp PLUS       &kp LBRC       &kp RBRC       &kp UNDER      &kp MINUS
+     GBP            &kp LBKT       &kp LBRC       &kp RBRC       &kp LPAR                   &kp RPAR       &kp PLUS       &kp EXCL       &kp RBKT       &kp MINUS
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &kp PIPE       TILDE          &kp LT          &kp GT        XXX                        XXX            &kp LBKT       &kp RBKT       TAG            &kp BSLH
+     EUR            &kp SEMI       &kp COLON      &kp EQUAL      &kp LT                     &kp GT         &kp ASTRK      &kp UNDER      &kp PIPE       &kp BSLH
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
                                    ___            ___            ___                        ___            ___            ___
@@ -224,34 +249,34 @@
 		};
 
 
-		function_layer {
+		func_layer {
 
 			label = "FUNCTION";
 			bindings = <
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4               ZOOMIN         XXX            XXX            XXX            &kp C_PWR
+ &kp LG(LA(F1))  &kp LG(LA(F2))  &kp LG(LA(F3))  &kp LG(LA(F4))  &kp LG(LA(F5))             &kp C_VOL_UP   &kp F9         &kp F10        &kp F11        &kp F12
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     XXX            XXX            XXX            XXX            XXX                        ZOOMOUT        &kp C_MUTE     &kp C_VOL_DN   &kp C_VOL_UP   XIV 
+ &kp LG(LA(F6))  &kp LG(LA(F7))  &kp LG(LA(F8))  &kp LG(LA(F9))  &kp LG(LA(F10))            &td_q          &kp F5         &kp F6         &kp F7         &kp F8
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &bt BT_CLR     XXX            XXX            XXX            XXX                        &tog WIN       XXX            XXX            XXX            PRINT
-// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
+     &kp LCTRL      &kp LALT       &kp LCMD       XXX            PRINT                    &kp C_PLAY_PAUSE  &kp F1        &kp F2         &kp F3         &kp F4
+// ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯ 
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
-                                   XXX            XXX            XXX                        XXX            XXX            XXX 
+                                   &to UNIX       &to WIN        &to CLR                    XXX            XXX            XXX 
 //                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯
 			>;
 		};
 
-		shortcut_layer {
+		blue_layer {
 
-			label = "SHORTCUT";
+			label = "BT";
 			bindings = <
 
 // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮ 
-     &kp LG(Q)      XXX            &kp LG(F)      &kp CAPS       XXX                        &kp PSCRN      &kp CAPS       XXX            XXX            &kp C_PWR
+     XXX            XXX            XXX            XXX            XXX                        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &kp LG(A)      &kp LG(R)      &kp LG(S)      &kp LG(T)      &kp LG(N)                  XXX            XXX            XXX            XXX            XXX
+     XXX            XXX            XXX            XXX            XXX                        XXX            XXX            XXX            XXX            XXX
 // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤           ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-     &kp LG(Z)      &kp LG(X)      &kp LG(C)      &kp LG(V)      &kp LS(LG(Z))              XXX            XXX            XXX            XXX            XXX
+     XXX            XXX            XXX            XXX            XXX                        XXX            XXX            XXX            XXX            &bt BT_CLR
 // ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────┴──────────────┴──────────────╯  
 //                               ╭──────────────┬──────────────┬──────────────╮           ╭──────────────┬──────────────┬──────────────╮
                                    XXX            XXX            XXX                        XXX            XXX            XXX 
