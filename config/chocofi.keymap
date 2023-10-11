@@ -157,6 +157,20 @@
     };	
 };
 
+/* MACROS */
+
+/ {
+
+    macros {
+		triple_grave_macro: triple_grave_macro {
+        	label = "TRIPLE_GRAVE_MACRO";
+        	compatible = "zmk,behavior-macro";
+        	#binding-cells = <0>;
+        	bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+    	};
+    };
+};
+
 /* KEYMAP */
 / {
 
@@ -284,6 +298,5 @@
 //                               ╰──────────────┴──────────────┴──────────────╯           ╰──────────────┴──────────────┴──────────────╯
 			>;
 		};
-
 	};
 };
