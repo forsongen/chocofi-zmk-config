@@ -137,6 +137,8 @@ behaviors {
       #binding-cells = <2>;
       label = "LAYER_STICKY_MODS";
       flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
       bindings = <&mo>, <&sk>;
     };
 
