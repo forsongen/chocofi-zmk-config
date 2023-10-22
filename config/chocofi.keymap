@@ -247,9 +247,9 @@ behaviors {
     nvnm {
       label = "NAVNUM ";
       bindings = <
-        &cmdtab        &kp HOME     &kp LS(F12)  &kp END    &none            &none   &kp N7  &kp N8  &kp N9  &none
-        &kp LA(LEFT)   &kp LEFT     &kp UP       &kp RIGHT  &kp LA(RIGHT)    &none   &kp N4  &kp N5  &kp N6  &kp MINUS
-        &kp LG(SPACE)  &kp ctrltab  &kp DOWN     &kp BSPC   &kp DEL          &none   &kp N1  &kp N2  &kp N3  &kp FSLH
+        &cmdtab        &kp HOME  &kp LS(F12)  &kp END    &none            &none   &kp N7  &kp N8  &kp N9  &none
+        &kp LA(LEFT)   &kp LEFT  &kp UP       &kp RIGHT  &kp LA(RIGHT)    &none   &kp N4  &kp N5  &kp N6  &kp MINUS
+        &kp LG(SPACE)  &ctrltab  &kp DOWN     &kp BSPC   &kp DEL          &none   &kp N1  &kp N2  &kp N3  &kp FSLH
                                     &trans       &trans     &trans           &trans  &kp N0  &trans
       >;
     };
