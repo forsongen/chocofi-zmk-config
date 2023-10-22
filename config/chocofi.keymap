@@ -181,7 +181,7 @@ behaviors {
       label = "BKT_MACRO";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&kp LBKT>, <double_bkt>;
+      bindings = <&kp LBKT>, <&double_bkt>;
     };
 
     ltgt: ltgt_macro {
