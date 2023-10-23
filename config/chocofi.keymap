@@ -67,6 +67,11 @@
       bindings = <&kp BACKSPACE>;
       key-positions = <8 7>;
     };
+
+    enter {
+      bindings = <&kp ENTER>;
+      key-positions = <18 17>;
+    };
   };
 
 /* MACROS */
