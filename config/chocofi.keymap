@@ -166,30 +166,38 @@ behaviors {
     dpar: par_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "PAR_MACRO";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp LPAR>, <&double_par>;
+      #binding-cells = <2>;
+      tapping-term-ms = <400>;
+      quick-tap-ms = <150>;
+      flavor = "balanced";
+      bindings = <&double_par>, <&kp>;
     };
     dbrc: brc_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "BRC_MACRO";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp LBRC>, <&double_brc>;
+      #binding-cells = <2>;
+      tapping-term-ms = <400>;
+      quick-tap-ms = <150>;
+      flavor = "balanced";
+      bindings = <&double_brc>, <&kp>;
     };
     dbkt: bkt_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "BKT_MACRO";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp LBKT>, <&double_bkt>;
+      #binding-cells = <2>;
+      tapping-term-ms = <400>;
+      quick-tap-ms = <150>;
+      flavor = "balanced";
+      bindings = <&double_bkt>, <&kp>;
     };
     ltgt: ltgt_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "LTGT_MACRO";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&kp LT>, <&less_than_greater_than>;
+      #binding-cells = <2>;
+      tapping-term-ms = <400>;
+      quick-tap-ms = <150>;
+      flavor = "balanced";
+      bindings = <&less_than_greater_than>, <&kp>;
     };
     cmdtab: cmdtab {
       compatible = "zmk,behavior-tri-state";
@@ -255,10 +263,10 @@ behaviors {
     symb {
       label = "SYMBOL ";
       bindings = <
-        &kp LS(GRAVE)  &kp DLLR  &kp PRCNT  &kp AMPS  &kp PIPE    &tgrave 0 GRAVE  &kp AT    &kp EXCL   &kp ASTRK   &kp CARET
-        &kp LS(N3)     &kp SEMI  &kp COLON  &dpar     &dbrc       &kp RBRC         &kp RPAR  &kp EQUAL  &kp PLUS    &kp MINUS
-        &kp RA(N2)     &none     &none      &dbkt     &ltgt       &kp GT           &kp RBKT  &kp UNDER  &kp RA(N3)  &kp BSLH
-                                 &trans     &trans    &trans      &trans           &trans    &trans
+        &kp LS(GRAVE)  &kp DLLR  &kp PRCNT  &kp AMPS      &kp PIPE        &tgrave 0 GRAVE  &kp AT    &kp EXCL   &kp ASTRK   &kp CARET
+        &kp LS(N3)     &kp SEMI  &kp COLON  &dpar 0 LPAR  &dbrc 0 LBRC    &kp RBRC         &kp RPAR  &kp EQUAL  &kp PLUS    &kp MINUS
+        &kp RA(N2)     &none     &none      &dbkt 0 LBKT  &ltgt 0 LT      &kp GT           &kp RBKT  &kp UNDER  &kp RA(N3)  &kp BSLH
+                                 &trans     &trans        &trans          &trans           &trans    &trans
       >;
     };
 
