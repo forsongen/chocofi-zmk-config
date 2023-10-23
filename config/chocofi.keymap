@@ -63,43 +63,39 @@
       bindings = <&kp LG(V)>;
     };
 
-    all {
-      bindings = <&kp LG(A)>;
-      key-positions = <10 11>;
+    backspace {
+      bindings = <&kp BACKSPACE>;
+      key-positions = <8 7>;
     };
   };
 
 /* MACROS */
 
-  macros {
+macros {
     triple_grave_macro: triple_grave_macro {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       label = "TRIPLE_GRAVE_MACRO";
       bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
     };
-
     double_par: double_par {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       label = "DOUBLE_PAR";
       bindings = <&kp LPAR &kp RPAR &kp LEFT>;
     };
-
     double_brc: double_brc {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       label = "DOUBLE_BRC";
       bindings = <&kp LBRC &kp RBRC &kp LEFT>;
     };
-
     double_bkt: double_bkt {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       label = "DOUBLE_BKT";
       bindings = <&kp LBKT &kp RBKT &kp LEFT>;
     };
-
     less_than_greater_than: less_than_greater_than {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -111,6 +107,16 @@
 /* BEHAVIOURS */
 
 behaviors {
+    ht: hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+	  label = "hold_tap";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+      bindings = <&kp>, <&kp>;
+	  hold-while-undecided;
+	  };
     gqt: global-quick-tap {
       compatible = "zmk,behavior-hold-tap";
       label = "GLOBAL_QUICK_TAP";
@@ -121,7 +127,6 @@ behaviors {
       global-quick-tap;
       bindings = <&kp>, <&kp>;
     };
-
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -131,7 +136,6 @@ behaviors {
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
-
     lsm: layer_sticky_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -141,7 +145,6 @@ behaviors {
       quick-tap-ms = <150>;
       bindings = <&mo>, <&sk>;
     };
-
     msm: mod_sticky_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -151,7 +154,6 @@ behaviors {
       quick-tap-ms = <150>;
       bindings = <&kp>, <&sk>;
     };
-
     tgrave: grave_macro {
       compatible = "zmk,behavior-hold-tap";
       label = "GRAVE_MACRO";
@@ -161,7 +163,6 @@ behaviors {
       flavor = "balanced";
       bindings = <&triple_grave_macro>, <&kp>;
     };
-
     dpar: par_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "PAR_MACRO";
@@ -169,7 +170,6 @@ behaviors {
       tapping-term-ms = <200>;
       bindings = <&kp LPAR>, <&double_par>;
     };
-
     dbrc: brc_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "BRC_MACRO";
@@ -177,7 +177,6 @@ behaviors {
       tapping-term-ms = <200>;
       bindings = <&kp LBRC>, <&double_brc>;
     };
-
     dbkt: bkt_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "BKT_MACRO";
@@ -185,7 +184,6 @@ behaviors {
       tapping-term-ms = <200>;
       bindings = <&kp LBKT>, <&double_bkt>;
     };
-
     ltgt: ltgt_macro {
       compatible = "zmk,behavior-tap-dance";
       label = "LTGT_MACRO";
@@ -193,7 +191,6 @@ behaviors {
       tapping-term-ms = <200>;
       bindings = <&kp LT>, <&less_than_greater_than>;
     };
-
     cmdtab: cmdtab {
       compatible = "zmk,behavior-tri-state";
       label = "CMDTAB";
@@ -201,7 +198,6 @@ behaviors {
       bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
       ignored-key-positions = <1>;
     };
-
     ctrltab: ctrltab {
       compatible = "zmk,behavior-tri-state";
       label = "CTRLTAB";
@@ -219,40 +215,40 @@ behaviors {
     unix {
       label = "UNIX";
       bindings = <
-        &kp Q        &kp W       &kp F        &kp P        &kp B            &kp J          &kp L        &kp U       &kp Y       &kp QUOT
-        &hm LCTRL A  &hm LALT R  &hm LGUI S   &kp T        &kp G            &kp M          &kp N        &hm RGUI E  &hm RALT I  &hm RCTRL O
-        &kp Z        &kp X       &kp C        &kp D        &kp V            &kp K          &kp H        &kp COMMA   &kp DOT     &kp FSLH
-                                 &lt 7 ENTER  &lt 3 SPACE  &lsm 5 LSHIFT    &lsm 6 RSHIFT  &lt 4 SPACE  &lt 7 BSPC
+        &kp Q        &kp W        &kp F        &kp P        &kp B            &kp J          &kp L        &kp U           &kp Y             &kp SQT
+        &kp A        &kp R        &kp S        &kp T        &kp G            &kp M          &kp N        &kp E           &kp I             &kp O
+        &hm LSHFT Z  &hm LCTRL X  &hm LALT C   &hm LGUI D   &kp V            &kp K          &hm RGUI H   &hm RALT COMMA  &hm RCTRL PERIOD  &hm RSHFT SLASH
+                            &lt 7 ENTER  &lt 3 SPACE  &lsm 5 LSHIFT    &lsm 6 RSHIFT  &lt 4 SPACE  &lt 7 BSPC
       >;
     };
 
     win {
       label = "WIN";
       bindings = <
-        &trans      &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
-        &hm LGUI A  &trans  &hm LCTRL S  &trans  &trans    &trans  &trans  &hm RCTRL E  &trans  &hm RGUI O
-        &trans      &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
-                            &trans       &trans  &trans    &trans  &trans  &trans
+        &trans  &trans      &trans  &trans       &trans    &trans  &trans       &trans  &trans           &trans
+        &trans  &trans      &trans  &trans       &trans    &trans  &trans       &trans  &trans           &trans
+        &trans  &hm LGUI X  &trans  &hm LCTRL D  &trans    &trans  &hm RCTRL H  &trans  &hm RGUI PERIOD  &trans
+                            &trans  &trans       &trans    &trans  &trans       &trans
       >;
     };
 
     gaming {
       label = "GAMING ";
       bindings = <
-        &trans  &trans  &trans     &trans  &trans                &trans  &trans  &trans       &trans  &trans
-        &kp A   &kp R   &kp S      &trans  &trans                &trans  &trans  &hm RCTRL E  &trans  &hm RGUI O
-        &trans  &trans  &trans     &trans  &trans                &trans  &trans  &trans       &trans  &trans
-                        &kp ENTER  &trans  &msm LSHIFT LSHIFT    &trans  &trans  &trans
+        &trans  &trans  &trans     &trans  &trans                &trans  &trans       &trans  &trans           &trans
+        &trans  &trans  &trans     &trans  &trans                &trans  &trans       &trans  &trans           &trans
+        &kp Z   &kp X   &kp C      &kp V   &trans                &trans  &hm RCTRL H  &trans  &hm RGUI PERIOD  &trans
+                        &kp ENTER  &trans  &msm LSHIFT LSHIFT    &trans  &trans       &trans
       >;
     };
 
     nvnm {
       label = "NAVNUM ";
       bindings = <
-        &cmdtab        &kp HOME  &kp LS(F12)  &kp END    &none            &none   &kp N7  &kp N8  &kp N9  &none
-        &kp LA(LEFT)   &kp LEFT  &kp UP       &kp RIGHT  &kp LA(RIGHT)    &none   &kp N4  &kp N5  &kp N6  &kp MINUS
-        &kp LG(SPACE)  &ctrltab  &kp DOWN     &kp BSPC   &kp DEL          &none   &kp N1  &kp N2  &kp N3  &kp FSLH
-                                    &trans       &trans     &trans           &trans  &kp N0  &trans
+        &cmdtab       &kp HOME    &kp LS(F12)  &kp END    &none            &none   &kp N7  &kp N8  &kp N9  &none
+        &kp LA(LEFT)  &kp LEFT    &kp UP       &kp RIGHT  &kp LA(RIGHT)    &none   &kp N4  &kp N5  &kp N6  &kp MINUS
+        &ctrltab      &kp LS(F3)  &kp DOWN     &kp BSPC   &kp DEL          &none   &kp N1  &kp N2  &kp N3  &kp FSLH
+                                  &trans       &trans     &trans           &trans  &kp N0  &trans
       >;
     };
 
@@ -269,10 +265,10 @@ behaviors {
     func {
       label = "FUNCTION";
       bindings = <
-        &none             &kp LS(HOME)  &none         &kp LS(END)    &none                &none   &kp F9  &kp F10  &kp F11  &kp F12
-        &kp LS(LA(LEFT))  &kp LS(LEFT)  &kp LS(UP)    &kp LS(RIGHT)  &kp LS(LA(RIGHT))    &none   &kp F5  &kp F6   &kp F7   &kp F8
-        &none             &none         &kp LS(DOWN)  &none          &none                &none   &kp F1  &kp F2   &kp F3   &kp F4
-                                        &trans        &trans         &trans               &trans  &trans  &trans
+        &kp LG(Q)  &kp LS(HOME)  &kp LG(F)     &kp LS(END)    &kp LG(B)            &none   &kp F9  &kp F10  &kp F11  &kp F12
+        &kp LG(A)  &kp LS(LEFT)  &kp LS(UP)    &kp LS(RIGHT)  &kp LS(LA(RIGHT))    &none   &kp F5  &kp F6   &kp F7   &kp F8
+        &kp LG(Z)  &kp LG(X)     &kp LS(DOWN)  &kp LG(C)      &kp LG(V)            &none   &kp F1  &kp F2   &kp F3   &kp F4
+                                 &trans        &trans         &trans               &trans  &trans  &trans
       >;
     };
 
