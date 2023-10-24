@@ -23,8 +23,15 @@
 
     // --> KEYCODES
 
+    caps {
+      key-positions = <32 33>;
+      bindings = <&kp CAPS>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
     esc {
-      key-positions = <2 1>;
+      key-positions = <1 2>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -38,7 +45,7 @@
     };
 
     backspace {
-      key-positions = <13 3>;
+      key-positions = <3 13>;
       bindings = <&kp BSPC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -52,7 +59,7 @@
     };
 
     enter {
-      key-positions = <14 13>;
+      key-positions = <13 14>;
       bindings = <&kp ENTER>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -466,22 +473,6 @@
       ignored-key-positions = <1>;
     };
 
-    auto_l: autoshift_left {
-      compatible = "zmk,behavior-tap-dance";
-      label = "AUTOSHIFT_LEFT";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&lsm 3 LSHIFT>, <&kp CAPS>;
-    };
-
-    auto_r: autoshift_right {
-      compatible = "zmk,behavior-tap-dance";
-      label = "AUTOSHIFT_RIGHT";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&lsm 4 RSHIFT>, <&kp CAPS>;
-    };
-
     // --> MOD MORPH
 
     commacolon: comma_colon {
@@ -515,10 +506,10 @@
     base {
       label = "BASE";
       bindings = <
-        &kp Q  &kp W  &kp F                    &kp P        &kp B      &kp J    &kp L        &kp U                   &kp Y     &kp SQT
-        &kp A  &kp R  &kp S                    &kp T        &kp G      &kp M    &kp N        &kp E                   &kp I     &kp O
-        &kp Z  &kp X  &kp C                    &kp D        &kp V      &kp K    &kp H        &commacolon             &dotsemi  &qexcl
-                      &mt RS(RA(RCTRL)) ENTER  &lt 1 SPACE  &auto_l    &auto_r  &lt 2 SPACE  &mt RS(RA(RCTRL)) BSPC
+        &kp Q  &kp W  &kp F                    &kp P        &kp B            &kp J         &kp L        &kp U                   &kp Y     &kp SQT
+        &kp A  &kp R  &kp S                    &kp T        &kp G            &kp M         &kp N        &kp E                   &kp I     &kp O
+        &kp Z  &kp X  &kp C                    &kp D        &kp V            &kp K         &kp H        &commacolon             &dotsemi  &qexcl
+                      &mt RS(RA(RCTRL)) ENTER  &lt 1 SPACE  &&lsm 3 LSHFT    &lsm 4 RSHFT  &lt 2 SPACE  &mt RS(RA(RCTRL)) BSPC
       >;
     };
 
