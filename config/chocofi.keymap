@@ -273,6 +273,7 @@
       key-positions = <0 1>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
+      layers = <1>;
     };
 
     italic {
@@ -280,6 +281,7 @@
       key-positions = <1 2>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
+      layers = <1>;
     };
 
     underline {
@@ -287,6 +289,7 @@
       key-positions = <3 2>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
+      layers = <1>;
     };
 
     select_all {
@@ -294,6 +297,7 @@
       key-positions = <1 11>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
+      layers = <1>;
     };
 
     find {
@@ -301,6 +305,7 @@
       key-positions = <2 12>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
+      layers = <1>;
     };
 
     find_next {
@@ -308,6 +313,7 @@
       key-positions = <12 22>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
+      layers = <1>;
     };
   };
 
