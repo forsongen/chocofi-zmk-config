@@ -525,9 +525,9 @@
     nav {
       label = "NAV";
       bindings = <
-        &cmdtab    &kp HOME      &kp RC(LS(LA(COMMA)))  &kp END        &none                  &none   &kp PG_UP  &none   &none  &none
+        &none      &kp HOME      &kp RC(LS(LA(COMMA)))  &kp END        &none                  &none   &kp PG_UP  &none   &none  &none
         &kp LSHFT  &kp LEFT      &kp UP                 &kp RIGHT      &kp LA(LS(RC(DOT)))    &none   &kp PG_DN  &none   &none  &none
-        &ctrltab   &kp LA(LEFT)  &kp DOWN               &kp LA(RIGHT)  &none                  &none   &none      &none   &none  &none
+        &none      &kp LA(LEFT)  &kp DOWN               &kp LA(RIGHT)  &none                  &none   &none      &none   &none  &none
                                  &trans                 &trans         &trans                 &trans  &trans     &trans
       >;
     };
