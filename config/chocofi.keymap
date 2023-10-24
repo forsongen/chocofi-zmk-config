@@ -216,16 +216,16 @@
       require-prior-idle-ms = <200>;
     };
 
-    rpar {
+    rbrc {
       key-positions = <15 25>;
-      bindings = <&kp RPAR>;
+      bindings = <&kp RBRC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
-    rbrc {
+    rpar {
       key-positions = <16 26>;
-      bindings = <&kp RBRC>;
+      bindings = <&kp RPAR>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
