@@ -27,42 +27,36 @@
       key-positions = <1 2>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     caps {
       key-positions = <2 3>;
       bindings = <&kp CAPS>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     tab {
       bindings = <&kp TAB>;
       key-positions = <3 4>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     backspace {
       key-positions = <3 13>;
       bindings = <&kp BSPC>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     del {
       key-positions = <4 14>;
       bindings = <&kp DEL>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     enter {
       key-positions = <13 14>;
       bindings = <&kp ENTER>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     // --> SHORTCUTS
@@ -85,14 +79,12 @@
       bindings = <&kp RG(X)>;
       key-positions = <20 21>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     copy {
       bindings = <&kp RG(C)>;
       key-positions = <21 22>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     paste {
@@ -108,70 +100,60 @@
       key-positions = <23 24>;
       bindings = <&kp SLASH>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     asterisk {
       bindings = <&kp ASTRK>;
       key-positions = <5 6>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     backslash {
       key-positions = <25 26>;
       bindings = <&kp BSLH>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     percent {
       key-positions = <7 8>;
       bindings = <&kp PRCNT>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     grave {
       key-positions = <1 11>;
       bindings = <&tgrave 0 GRAVE>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     underscore {
       key-positions = <5 15>;
       bindings = <&kp UNDER>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     equals {
       key-positions = <15 16>;
       bindings = <&kp EQUAL>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     minus {
       bindings = <&kp MINUS>;
       key-positions = <6 16>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     plus {
       key-positions = <7 17>;
       bindings = <&kp PLUS>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     caret {
       key-positions = <8 18>;
       bindings = <&kp CARET>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
+      timeout-ms = <40>;v
     };
 
     at {
@@ -199,42 +181,36 @@
       bindings = <&dbkt 0 LBKT>;
       key-positions = <11 21>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     ltgt {
       bindings = <&ltgt 0 LT>;
       key-positions = <12 22>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     dpar {
       bindings = <&dpar 0 LPAR>;
       key-positions = <13 23>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     dbrc {
       bindings = <&dbrc 0 LBRC>;
       key-positions = <14 24>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     rbrc {
       key-positions = <15 25>;
       bindings = <&kp RBRC>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     rpar {
       key-positions = <16 26>;
       bindings = <&kp RPAR>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
 
@@ -242,21 +218,18 @@
       key-positions = <17 27>;
       bindings = <&kp GT>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     rbkt {
       key-positions = <18 28>;
       bindings = <&kp RBKT>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     tilde {
       key-positions = <2 12>;
       bindings = <&kp LS(GRAVE)>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     ampersand {
@@ -270,7 +243,6 @@
       key-positions = <27 28>;
       bindings = <&kp PIPE>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     // --> NAV COMBOS
@@ -279,7 +251,6 @@
       bindings = <&kp RG(B)>;
       key-positions = <0 1>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
       layers = <3>;
     };
 
@@ -287,7 +258,6 @@
       bindings = <&kp RG(I)>;
       key-positions = <1 2>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
       layers = <3>;
     };
 
@@ -295,7 +265,6 @@
       bindings = <&kp RG(U)>;
       key-positions = <3 2>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
       layers = <3>;
     };
 
@@ -303,7 +272,6 @@
       bindings = <&kp RG(A)>;
       key-positions = <1 11>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
       layers = <3>;
     };
 
@@ -311,7 +279,6 @@
       bindings = <&kp RG(F)>;
       key-positions = <2 12>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
       layers = <3>;
     };
 
@@ -319,7 +286,6 @@
       bindings = <&kp RG(G)>;
       key-positions = <12 22>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
       layers = <3>;
     };
   };
