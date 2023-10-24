@@ -17,6 +17,10 @@
     quick-tap-ms = <199>;
 };
 
+&sk {
+    release-after-ms = <2000>;
+};
+
 /* COMBOS */
 
 / {
