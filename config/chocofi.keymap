@@ -195,15 +195,15 @@
       require-prior-idle-ms = <200>;
     };
 
-    ltgt {
-      bindings = <&ltgt 0 LT>;
+    dbkt {
+      bindings = <&dbkt 0 LBKT>;
       key-positions = <11 21>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
-    dbkt {
-      bindings = <&dbkt 0 LBKT>;
+    ltgt {
+      bindings = <&ltgt 0 LT>;
       key-positions = <12 22>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -237,16 +237,17 @@
       require-prior-idle-ms = <200>;
     };
 
-    rbkt {
+
+    gt {
       key-positions = <17 27>;
-      bindings = <&kp RBKT>;
+      bindings = <&kp GT>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
-    gt {
+    rbkt {
       key-positions = <18 28>;
-      bindings = <&kp GT>;
+      bindings = <&kp RBKT>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -509,7 +510,7 @@
         &kp Q  &kp W  &kp F                    &kp P        &kp B            &kp J         &kp L        &kp U                   &kp Y     &kp SQT
         &kp A  &kp R  &kp S                    &kp T        &kp G            &kp M         &kp N        &kp E                   &kp I     &kp O
         &kp Z  &kp X  &kp C                    &kp D        &kp V            &kp K         &kp H        &commacolon             &dotsemi  &qexcl
-                      &mt RS(RA(RCTRL)) ENTER  &lt 1 SPACE  &&lsm 3 LSHFT    &lsm 4 RSHFT  &lt 2 SPACE  &mt RS(RA(RCTRL)) BSPC
+                      &mt RS(RA(RCTRL)) ENTER  &lt 1 SPACE  &lsm 3 LSHFT     &lsm 4 RSHFT  &lt 2 SPACE  &mt RS(RA(RCTRL)) BSPC
       >;
     };
 
