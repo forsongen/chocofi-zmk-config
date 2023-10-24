@@ -51,9 +51,16 @@
       require-prior-idle-ms = <200>;
     };
 
-    bspc {
+    backspace {
       key-positions = <13 3>;
       bindings = <&kp BSPC>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    backspace_2 {
+      bindings = <&kp BSPC>;
+      key-positions = <5 15>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -61,6 +68,13 @@
     del {
       key-positions = <4 14>;
       bindings = <&kp DEL>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    del_2 {
+      bindings = <&kp DEL>;
+      key-positions = <6 16>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -158,28 +172,28 @@
 
     ltgt {
       bindings = <&less_than_greater_than>;
-      key-positions = <5 15>;
+      key-positions = <15 25>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     dpar {
       bindings = <&double_par>;
-      key-positions = <6 16>;
+      key-positions = <16 26>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     dbrc {
       bindings = <&double_brc>;
-      key-positions = <7 17>;
+      key-positions = <17 27>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     dbkt {
       bindings = <&double_bkt>;
-      key-positions = <8 18>;
+      key-positions = <18 28>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
