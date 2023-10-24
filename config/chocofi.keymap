@@ -24,53 +24,164 @@
     compatible = "zmk,combos";
 
     esc {
-      key-positions = <1 2>;
+      key-positions = <21 11>;
       bindings = <&kp ESC>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     tab {
       bindings = <&kp TAB>;
-      key-positions = <11 12>;
-    };
-
-    caps {
-      key-positions = <27 28>;
-      bindings = <&kp CAPS>;
-    };
-
-    undo {
-      key-positions = <2 3>;
-      bindings = <&kp LG(Z)>;
-    };
-
-    redo {
-      key-positions = <4 3>;
-      bindings = <&kp LS(LG(Z))>;
-    };
-
-    cut {
-      key-positions = <20 21>;
-      bindings = <&kp LG(X)>;
-    };
-
-    copy {
-      key-positions = <21 22>;
-      bindings = <&kp LG(C)>;
-    };
-
-    paste {
-      key-positions = <23 24>;
-      bindings = <&kp LG(V)>;
-    };
-
-    backspace {
-      bindings = <&kp BACKSPACE>;
-      key-positions = <8 7>;
+      key-positions = <3 4>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     enter {
+      key-positions = <14 13>;
       bindings = <&kp ENTER>;
-      key-positions = <18 17>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    caps {
+      key-positions = <23 24>;
+      bindings = <&kp CAPS>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    bspc {
+      key-positions = <13 3>;
+      bindings = <&kp BSPC>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    del {
+      key-positions = <4 14>;
+      bindings = <&kp DEL>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    pg_up {
+      key-positions = <5 6>;
+      bindings = <&kp PG_UP>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    pg_dn {
+      key-positions = <15 16>;
+      bindings = <&kp PG_DN>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    bold {
+      bindings = <&kp RG(B)>;
+      key-positions = <0 1>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    italic {
+      bindings = <&kp RG(I)>;
+      key-positions = <1 2>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    underline {
+      bindings = <&kp RG(U)>;
+      key-positions = <3 2>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    select_all {
+      bindings = <&kp RG(A)>;
+      key-positions = <1 11>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    find {
+      bindings = <&kp RG(F)>;
+      key-positions = <2 12>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    find_next {
+      bindings = <&kp RG(G)>;
+      key-positions = <12 22>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    undo {
+      bindings = <&kp RG(Z)>;
+      key-positions = <13 23>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    redo {
+      bindings = <&kp RG(LS(Z))>;
+      key-positions = <24 14>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    cut {
+      bindings = <&kp RG(X)>;
+      key-positions = <20 21>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    copy {
+      bindings = <&kp RG(C)>;
+      key-positions = <21 22>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    paste {
+      bindings = <&kp RG(V)>;
+      key-positions = <23 22>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    ltgt {
+      bindings = <&less_than_greater_than>;
+      key-positions = <5 15>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    dpar {
+      bindings = <&double_par>;
+      key-positions = <6 16>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    dbrc {
+      bindings = <&double_brc>;
+      key-positions = <7 17>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    dbkt {
+      bindings = <&double_bkt>;
+      key-positions = <8 18>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
   };
 
@@ -130,15 +241,6 @@ behaviors {
       tapping-term-ms = <200>;
       quick-tap-ms = <125>;
       global-quick-tap;
-      bindings = <&kp>, <&kp>;
-    };
-    hm: homerow_mods {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      label = "HOMEROW_MODS";
-      tapping-term-ms = <200>;
-      quick-tap-ms = <199>;
-      flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
     lsm: layer_sticky_mods {
@@ -208,14 +310,14 @@ behaviors {
       compatible = "zmk,behavior-tri-state";
       label = "CMDTAB";
       #binding-cells = <0>;
-      bindings = <&kt LCMD>, <&kp TAB>, <&kt LCMD>;
+      bindings = <&kt RCMD>, <&kp TAB>, <&kt RCMD>;
       ignored-key-positions = <1>;
     };
     ctrltab: ctrltab {
       compatible = "zmk,behavior-tri-state";
       label = "CTRLTAB";
       #binding-cells = <0>;
-      bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
+      bindings = <&kt RCTRL>, <&kp TAB>, <&kt RCTRL>;
       ignored-key-positions = <1>;
     };
   };
@@ -225,73 +327,53 @@ behaviors {
   keymap {
     compatible = "zmk,keymap";
 
-    unix {
-      label = "UNIX";
+    base {
+      label = "BASE";
       bindings = <
-        &kp Q        &kp W        &kp F        &kp P        &kp B            &kp J          &kp L        &kp U           &kp Y             &kp SQT
-        &kp A        &kp R        &kp S        &kp T        &kp G            &kp M          &kp N        &kp E           &kp I             &kp O
-        &hm LSHFT Z  &hm LCTRL X  &hm LALT C   &hm LGUI D   &kp V            &kp K          &hm RGUI H   &hm RALT COMMA  &hm RCTRL PERIOD  &hm RSHFT SLASH
-                            &lt 7 ENTER  &lt 3 SPACE  &lsm 5 LSHIFT    &lsm 6 RSHIFT  &lt 4 SPACE  &lt 7 BSPC
-      >;
-    };
-
-    win {
-      label = "WIN";
-      bindings = <
-        &trans  &trans      &trans  &trans       &trans    &trans  &trans       &trans  &trans           &trans
-        &trans  &trans      &trans  &trans       &trans    &trans  &trans       &trans  &trans           &trans
-        &trans  &hm LGUI X  &trans  &hm LCTRL D  &trans    &trans  &hm RCTRL H  &trans  &hm RGUI PERIOD  &trans
-                            &trans  &trans       &trans    &trans  &trans       &trans
-      >;
-    };
-
-    gaming {
-      label = "GAMING ";
-      bindings = <
-        &trans  &trans  &trans     &trans  &trans                &trans  &trans       &trans  &trans           &trans
-        &trans  &trans  &trans     &trans  &trans                &trans  &trans       &trans  &trans           &trans
-        &kp Z   &kp X   &kp C      &kp V   &trans                &trans  &hm RCTRL H  &trans  &hm RGUI PERIOD  &trans
-                        &kp ENTER  &trans  &msm LSHIFT LSHIFT    &trans  &trans       &trans
+        &kp Q  &kp W  &kp F                    &kp P        &kp B            &kp J          &kp L        &kp U                   &kp Y    &kp SQT
+        &kp A  &kp R  &kp S                    &kp T        &kp G            &kp M          &kp N        &kp E                   &kp I    &kp O
+        &kp Z  &kp X  &kp C                    &kp D        &kp V            &kp K          &kp H        &kp COMMA               &kp DOT  &kp SEMI
+                      &mt RS(RA(RCTRL)) ENTER  &lt 1 SPACE  &lsm 3 LSHIFT    &lsm 4 RSHIFT  &lt 2 SPACE  &mt RS(RA(RCTRL)) BSPC
       >;
     };
 
     nvnm {
       label = "NAVNUM ";
       bindings = <
-        &cmdtab       &kp HOME    &kp LS(F12)  &kp END    &none            &none   &kp N7  &kp N8  &kp N9  &none
-        &kp LA(LEFT)  &kp LEFT    &kp UP       &kp RIGHT  &kp LA(RIGHT)    &none   &kp N4  &kp N5  &kp N6  &kp MINUS
-        &ctrltab      &kp LS(F3)  &kp DOWN     &kp BSPC   &kp DEL          &none   &kp N1  &kp N2  &kp N3  &kp FSLH
-                                  &trans       &trans     &trans           &trans  &kp N0  &trans
+        &cmdtab    &kp HOME      &kp RC(LS(LA(COMMA)))  &kp END        &none                  &kp RA(N2)  &kp N7  &kp N8  &kp N9  &kp SLASH
+        &kp LSHFT  &kp LEFT      &kp UP                 &kp RIGHT      &kp LA(LS(RC(DOT)))    &kp LS(N3)  &kp N4  &kp N5  &kp N6  &kp MINUS
+        &ctrltab   &kp LA(LEFT)  &kp DOWN               &kp LA(RIGHT)  &none                  &kp DLLR    &kp N1  &kp N2  &kp N3  &kp DOT
+                                 &trans                 &trans         &trans                 &trans      &kp N0  &trans
       >;
     };
 
     symb {
       label = "SYMBOL ";
       bindings = <
-        &kp LS(GRAVE)  &kp DLLR  &kp PRCNT  &kp AMPS      &kp PIPE        &tgrave 0 GRAVE  &kp AT    &kp EXCL   &kp ASTRK   &kp CARET
-        &kp LS(N3)     &kp SEMI  &kp COLON  &dpar 0 LPAR  &dbrc 0 LBRC    &kp RBRC         &kp RPAR  &kp EQUAL  &kp PLUS    &kp MINUS
-        &kp RA(N2)     &none     &none      &dbkt 0 LBKT  &ltgt 0 LT      &kp GT           &kp RBKT  &kp UNDER  &kp RA(N3)  &kp BSLH
-                                 &trans     &trans        &trans          &trans           &trans    &trans
+        &kp LS(GRAVE)  &dbkt 0 LBKT  &dbrc 0 LBRC     &dpar 0 LPAR  &ltgt 0 LT    &kp GT      &kp RBRC   &kp RBKT   &kp ASTRK  &none
+        &kp N3         &kp UNDER     &kp AT           &kp PRCNT     &kp DLLR      &kp RA(N3)  &kp EQUAL  &kp ASTRK  &kp PLUS   &kp MINUS
+        &none          &kp CARET     &tgrave 0 GRAVE  &kp SLASH     &none         &none       &kp BSLH   &kp AMPS   &kp QMARK  &kp EXCL
+                                     &trans           &trans        &trans        &trans      &trans     &trans
       >;
     };
 
     func {
       label = "FUNCTION";
       bindings = <
-        &kp LG(Q)  &kp LS(HOME)  &kp LG(F)     &kp LS(END)    &kp LG(B)            &none   &kp F9  &kp F10  &kp F11  &kp F12
-        &kp LG(A)  &kp LS(LEFT)  &kp LS(UP)    &kp LS(RIGHT)  &kp LS(LA(RIGHT))    &none   &kp F5  &kp F6   &kp F7   &kp F8
-        &kp LG(Z)  &kp LG(X)     &kp LS(DOWN)  &kp LG(C)      &kp LG(V)            &none   &kp F1  &kp F2   &kp F3   &kp F4
-                                 &trans        &trans         &trans               &trans  &trans  &trans
+        &kp LA(TAB)       &cmdtab           &ctrltab        &kp LG(SPACE)   &none     &none   &kp F1  &kp F2   &kp F3   &kp F4
+        &msm LSHFT LSHFT  &msm RCTRL RCTRL  &msm LALT LALT  &msm RCMD RCMD  &none     &none   &kp F5  &kp F6   &kp F7   &kp F8
+        &sys_reset        &none             &none           &none           &none     &none   &kp F9  &kp F10  &kp F11  &kp F12
+                                            &trans          &trans          &trans    &trans  &trans  &trans
       >;
     };
 
     media {
       label = "MEDIA";
       bindings = <
-        &none  &kp LS(LC(LA(F5)))  &none               &kp LS(LC(LA(F6)))  &none    &none             &kp C_VOL_UP  &none  &none  &none
-        &none  &kp LS(LC(LA(F1)))  &kp LS(LC(LA(F2)))  &kp LS(LC(LA(F3)))  &none    &none             &kp C_VOL_DN  &none  &none  &none
-        &none  &none               &kp LS(LC(LA(F4)))  &none               &none    &kp C_PLAY_PAUSE  &kp C_MUTE    &none  &none  &none
-                                   &none               &none               &none    &none             &none         &none
+        &kp LS(LA(RC(KP_N1)))  &kp LS(LA(RC(KP_N2)))  &kp LS(LA(RC(KP_N3)))    &kp LS(LA(RC(KP_N4)))     &none    &kp C_VOL_UP  &none             &none           &none             &none
+        &kp LS(LA(RC(KP_N5)))  &kp LS(LA(RC(KP_N6)))  &kp LS(LA(RC(KP_N7)))    &kp LS(LA(RC(KP_N8)))     &none    &kp C_VOL_DN  &msm RCMD RCMD    &msm RALT RALT  &msm RCTRL RCTRL  &msm RSHFT RSHFT
+        &kp LS(LA(RC(KP_N9)))  &kp LS(LA(RC(KP_N0)))  &kp LS(LA(RC(KP_PLUS)))  &kp LS(LA(RC(KP_MINUS)))  &none    &kp C_MUTE    &kp C_PLAY_PAUSE  &none           &none             &sys_reset
+                                                            &none                    &none                     &none    &none         &none             &none
       >;
     };
 
@@ -299,10 +381,19 @@ behaviors {
       label = "CONNECT";
       bindings = <
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-        &to 0         &to 1         &to 2         &none         &none           &to 0         &to 1         &to 2         &none         &none
+        &none         &none         &none         &none         &none           &none         &none         &none         &none         &none
         &bt BT_CLR    &none         &none         &none         &sys_reset      &sys_reset    &none         &none         &none         &bt BT_CLR
                                     &none         &none         &none           &none         &none         &none
       >;
+    };
+  };
+
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
+
+    connect {
+      if-layers = <3 4>;
+      then-layer = <5>;
     };
   };
 };
