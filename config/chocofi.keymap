@@ -21,44 +21,92 @@
   combos {
     compatible = "zmk,combos";
 
+    // --> NAV COMBOS
+
+    bold {
+      bindings = <&kp RG(B)>;
+      key-positions = <0 1>;
+      timeout-ms = <40>;
+      layers = <3>;
+    };
+
+    italic {
+      bindings = <&kp RG(I)>;
+      key-positions = <1 2>;
+      timeout-ms = <40>;
+      layers = <3>;
+    };
+
+    underline {
+      bindings = <&kp RG(U)>;
+      key-positions = <3 2>;
+      timeout-ms = <40>;
+      layers = <3>;
+    };
+
+    select_all {
+      bindings = <&kp RG(A)>;
+      key-positions = <1 11>;
+      timeout-ms = <40>;
+      layers = <3>;
+    };
+
+    find {
+      bindings = <&kp RG(F)>;
+      key-positions = <2 12>;
+      timeout-ms = <40>;
+      layers = <3>;
+    };
+
+    find_next {
+      bindings = <&kp RG(G)>;
+      key-positions = <12 22>;
+      timeout-ms = <40>;
+      layers = <3>;
+    };
+
     // --> KEYCODES
 
     esc {
       key-positions = <1 2>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     caps {
       key-positions = <2 3>;
       bindings = <&kp CAPS>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     tab {
       bindings = <&kp TAB>;
       key-positions = <11 12>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>
+      require-prior-idle-ms = <200>;
     };
 
     backspace {
       key-positions = <3 13>;
       bindings = <&kp BSPC>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     del {
       key-positions = <4 14>;
       bindings = <&kp DEL>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     enter {
       key-positions = <12 13>;
       bindings = <&kp ENTER>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>
+      require-prior-idle-ms = <200>;
     };
 
     // --> SHORTCUTS
@@ -240,57 +288,12 @@
       key-positions = <27 26>;
       bindings = <&kp AMPS>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
     pipe {
       key-positions = <27 28>;
       bindings = <&kp PIPE>;
       timeout-ms = <40>;
-    };
-
-    // --> NAV COMBOS
-
-    bold {
-      bindings = <&kp RG(B)>;
-      key-positions = <0 1>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    italic {
-      bindings = <&kp RG(I)>;
-      key-positions = <1 2>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    underline {
-      bindings = <&kp RG(U)>;
-      key-positions = <3 2>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    select_all {
-      bindings = <&kp RG(A)>;
-      key-positions = <1 11>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    find {
-      bindings = <&kp RG(F)>;
-      key-positions = <2 12>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    find_next {
-      bindings = <&kp RG(G)>;
-      key-positions = <12 22>;
-      timeout-ms = <40>;
-      layers = <3>;
     };
   };
 
