@@ -37,7 +37,7 @@
 
     tab {
       bindings = <&kp TAB>;
-      key-positions = <3 4>;
+      key-positions = <11 12>;
       timeout-ms = <40>;
     };
 
@@ -54,7 +54,7 @@
     };
 
     enter {
-      key-positions = <13 14>;
+      key-positions = <12 13>;
       bindings = <&kp ENTER>;
       timeout-ms = <40>;
     };
@@ -63,14 +63,14 @@
 
     undo {
       bindings = <&kp RG(Z)>;
-      key-positions = <11 12>;
+      key-positions = <3 4>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     redo {
       bindings = <&kp RG(LS(Z))>;
-      key-positions = <12 13>;
+      key-positions = <13 14>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -96,8 +96,14 @@
 
     // --> SYMBOLS
 
-    forwardslash {
+    backslash {
       key-positions = <23 24>;
+      bindings = <&kp BSLH>;
+      timeout-ms = <40>;
+    };    
+
+    forwardslash {
+      key-positions = <25 26>;
       bindings = <&kp SLASH>;
       timeout-ms = <40>;
     };
@@ -105,12 +111,6 @@
     asterisk {
       bindings = <&kp ASTRK>;
       key-positions = <5 6>;
-      timeout-ms = <40>;
-    };
-
-    backslash {
-      key-positions = <25 26>;
-      bindings = <&kp BSLH>;
       timeout-ms = <40>;
     };
 
