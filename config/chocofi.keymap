@@ -153,7 +153,7 @@
     caret {
       key-positions = <8 18>;
       bindings = <&kp CARET>;
-      timeout-ms = <40>;v
+      timeout-ms = <40>;
     };
 
     at {
