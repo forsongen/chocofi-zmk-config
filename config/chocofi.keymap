@@ -39,6 +39,7 @@
       bindings = <&kp TAB>;
       key-positions = <11 12>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>
     };
 
     backspace {
@@ -57,20 +58,21 @@
       key-positions = <12 13>;
       bindings = <&kp ENTER>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>
     };
 
     // --> SHORTCUTS
 
     undo {
       bindings = <&kp RG(Z)>;
-      key-positions = <3 4>;
+      key-positions = <13 14>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     redo {
       bindings = <&kp RG(LS(Z))>;
-      key-positions = <13 14>;
+      key-positions = <3 4>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -79,12 +81,14 @@
       bindings = <&kp RG(X)>;
       key-positions = <20 21>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     copy {
       bindings = <&kp RG(C)>;
       key-positions = <21 22>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     paste {
