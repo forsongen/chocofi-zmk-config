@@ -25,7 +25,7 @@
     // --> KEYCODES
 
     esc {
-      key-positions = <10 11>;
+      key-positions = <13 14>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -107,7 +107,7 @@
 
     backslash {
       key-positions = <26 27>;
-      bindings = <&kp BSLH>;
+      bindings = <&newline 0 BSLH>;
       timeout-ms = <40>;
     };    
 
@@ -118,7 +118,7 @@
     };
 
     underscore {
-      key-positions = <18 19>;
+      key-positions = <15 16>;
       bindings = <&kp UNDER>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -145,32 +145,52 @@
       require-prior-idle-ms = <200>;
     };
 
-    brcs {
-      bindings = <&brcs>;
+    dbrc {
+      bindings = <&dbrc 0 LBRC>;
       key-positions = <5 15>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
-    pars {
-      bindings = <&pars>;
+    rbrc {
+      key-positions = <15 25>;
+      bindings = <&kp RBRC>;
+      timeout-ms = <40>;
+    };
+
+    dpar {
+      bindings = <&dpar 0 LPAR>;
       key-positions = <6 16>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
+    };
+
+    rpar {
+      key-positions = <16 26>;
+      bindings = <&kp RPAR>;
+      timeout-ms = <40>;
     };
 
     ltgt {
-      bindings = <&ltgt>;
+      bindings = <&ltgt 0 LT>;
       key-positions = <7 17>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
     };
 
-    bkts {
-      bindings = <&bkts>;
+    gt {
+      key-positions = <17 27>;
+      bindings = <&kp GT>;
+      timeout-ms = <40>;
+    };
+
+    dbkt {
+      bindings = <&dbkt 0 LBKT>;
       key-positions = <8 18>;
       timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
+    };
+
+    rbkt {
+      key-positions = <18 28>;
+      bindings = <&kp RBKT>;
+      timeout-ms = <40>;
     };
   };
 
@@ -182,6 +202,12 @@
       #binding-cells = <0>;
       label = "TRIPLE_GRAVE_MACRO";
       bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
+    };
+    new_line_macro: new_line_macro {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      label = "NEW_LINE_MACRO";
+      bindings = <&kp BSLH &kp N>;
     };
     less_greater: less_greater {
       compatible = "zmk,behavior-macro";
@@ -268,9 +294,19 @@
       bindings = <&triple_grave_macro>, <&kp>;
     };
 
-    auto_ltgt: auto_ltgt_macro {
+    newline: bslh_newline_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "AUTO_LTGT_MACRO";
+      label = "BSLH_NEWLINE_MACRO";
+      #binding-cells = <2>;
+      tapping-term-ms = <400>;
+      quick-tap-ms = <150>;
+      flavor = "balanced";
+      bindings = <&new_line_macro>, <&kp>;
+    };
+
+    ltgt: ltgt_macro {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LTGT_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
@@ -278,17 +314,9 @@
       bindings = <&less_greater>, <&kp>;
     };
 
-    ltgt: tap_dance_ltgt {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_LTGT";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&auto_ltgt 0 LT>, <&kp GT>;
-    };
-
-    auto_dbkt: auto_dbkt_macro {
+    dbkt: dbkt_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "AUTO_DBKT_MACRO";
+      label = "DBKT_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
@@ -296,17 +324,9 @@
       bindings = <&double_bkt>, <&kp>;
     };
 
-    bkts: tap_dance_bkts {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_BKTS";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&auto_dbkt 0 LBKT>, <&kp RBKT>;
-    };
-
-    auto_dpar: auto_dpar_macro {
+    dpar: dpar_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "AUTO_DPAR_MACRO";
+      label = "DPAR_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
@@ -314,30 +334,14 @@
       bindings = <&double_par>, <&kp>;
     };
 
-    pars: tap_dance_pars {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_PARS";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&auto_dpar 0 LPAR>, <&kp RPAR>;
-    };
-
-    auto_dbrc: auto_dbrc_macro {
+    dbrc: dbrc_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "AUTO_DBRC_MACRO";
+      label = "DBRC_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
       flavor = "balanced";
       bindings = <&double_brc>, <&kp>;
-    };
-
-    brcs: tap_dance_brcs {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_BRCS";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&auto_dbrc 0 LBRC>, <&kp RBRC>;
     };
 
     cmdtab: cmdtab {
