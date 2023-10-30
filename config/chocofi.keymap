@@ -22,61 +22,17 @@
   combos {
     compatible = "zmk,combos";
 
-    // --> NAV COMBOS
-
-    bold {
-      bindings = <&kp RG(B)>;
-      key-positions = <0 1>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    italic {
-      bindings = <&kp RG(I)>;
-      key-positions = <1 2>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    underline {
-      bindings = <&kp RG(U)>;
-      key-positions = <3 2>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    select_all {
-      bindings = <&kp RG(A)>;
-      key-positions = <1 11>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    find {
-      bindings = <&kp RG(F)>;
-      key-positions = <2 12>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
-    find_next {
-      bindings = <&kp RG(G)>;
-      key-positions = <12 22>;
-      timeout-ms = <40>;
-      layers = <3>;
-    };
-
     // --> KEYCODES
 
     esc {
-      key-positions = <1 2>;
+      key-positions = <10 11>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     caps {
-      key-positions = <2 3>;
+      key-positions = <1 2>;
       bindings = <&kp CAPS>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
@@ -84,7 +40,7 @@
 
     tab {
       bindings = <&kp TAB>;
-      key-positions = <3 4>;
+      key-positions = <1 11>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -104,6 +60,13 @@
     };
 
     // --> SHORTCUTS
+
+    num {
+      bindings = <&tog 2>;
+      key-positions = <7 8>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
 
     cut {
       bindings = <&kp RG(X)>;
@@ -126,154 +89,88 @@
       require-prior-idle-ms = <200>;
     };
 
+    undo {
+      bindings = <&kp RG(Z)>;
+      key-positions = <21 22>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    redo {
+      bindings = <&kp LS(RG(Z))>;
+      key-positions = <23 22>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
     // --> SYMBOLS
 
     backslash {
-      key-positions = <23 24>;
+      key-positions = <26 27>;
       bindings = <&kp BSLH>;
       timeout-ms = <40>;
     };    
 
     forwardslash {
-      key-positions = <25 26>;
+      key-positions = <27 28>;
       bindings = <&kp SLASH>;
       timeout-ms = <40>;
     };
 
-    asterisk {
-      bindings = <&kp ASTRK>;
-      key-positions = <5 6>;
-      timeout-ms = <40>;
-    };
-
-    percent {
-      key-positions = <7 8>;
-      bindings = <&kp PRCNT>;
-      timeout-ms = <40>;
-    };
-
-    grave {
-      key-positions = <1 11>;
-      bindings = <&tgrave 0 GRAVE>;
-      timeout-ms = <40>;
-    };
-
     underscore {
-      key-positions = <5 15>;
+      key-positions = <18 19>;
       bindings = <&kp UNDER>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     equals {
-      key-positions = <15 16>;
+      key-positions = <16 17>;
       bindings = <&kp EQUAL>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     minus {
       bindings = <&kp MINUS>;
-      key-positions = <6 16>;
+      key-positions = <17 18>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
     plus {
-      key-positions = <7 17>;
+      key-positions = <6 7>;
       bindings = <&kp PLUS>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
-    caret {
-      key-positions = <8 18>;
-      bindings = <&kp CARET>;
-      timeout-ms = <40>;
-    };
-
-    at {
-      key-positions = <6 7>;
-      bindings = <&kp AT>;
+    brcs {
+      bindings = <&brcs>;
+      key-positions = <5 15>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
-    dollar {
-      key-positions = <16 17>;
-      bindings = <&kp DLLR>;
+    pars {
+      bindings = <&pars>;
+      key-positions = <6 16>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
-    };
-
-    hash {
-      key-positions = <17 18>;
-      bindings = <&kp RA(N3)>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    dbkt {
-      bindings = <&dbkt 0 LBKT>;
-      key-positions = <11 21>;
-      timeout-ms = <40>;
     };
 
     ltgt {
-      bindings = <&ltgt 0 LT>;
-      key-positions = <12 22>;
+      bindings = <&ltgt>;
+      key-positions = <7 17>;
       timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
 
-    dpar {
-      bindings = <&dpar 0 LPAR>;
-      key-positions = <13 23>;
+    bkts {
+      bindings = <&bkts>;
+      key-positions = <8 18>;
       timeout-ms = <40>;
-    };
-
-    dbrc {
-      bindings = <&dbrc 0 LBRC>;
-      key-positions = <14 24>;
-      timeout-ms = <40>;
-    };
-
-    rbrc {
-      key-positions = <15 25>;
-      bindings = <&kp RBRC>;
-      timeout-ms = <40>;
-    };
-
-    rpar {
-      key-positions = <16 26>;
-      bindings = <&kp RPAR>;
-      timeout-ms = <40>;
-    };
-
-
-    gt {
-      key-positions = <17 27>;
-      bindings = <&kp GT>;
-      timeout-ms = <40>;
-    };
-
-    rbkt {
-      key-positions = <18 28>;
-      bindings = <&kp RBKT>;
-      timeout-ms = <40>;
-    };
-
-    tilde {
-      key-positions = <2 12>;
-      bindings = <&kp LS(GRAVE)>;
-      timeout-ms = <40>;
-    };
-
-    ampersand {
-      key-positions = <27 26>;
-      bindings = <&kp AMPS>;
-      timeout-ms = <40>;
-    };
-
-    pipe {
-      key-positions = <27 28>;
-      bindings = <&kp PIPE>;
-      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
     };
   };
 
@@ -371,9 +268,9 @@
       bindings = <&triple_grave_macro>, <&kp>;
     };
 
-    ltgt: ltgt_macro {
+    auto_ltgt: auto_ltgt_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "LTGT_MACRO";
+      label = "AUTO_LTGT_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
@@ -381,9 +278,17 @@
       bindings = <&less_greater>, <&kp>;
     };
 
-    dbkt: bkt_macro {
+    ltgt: tap_dance_ltgt {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_LTGT";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&auto_ltgt 0 LT>, <&kp GT>;
+    };
+
+    auto_dbkt: auto_dbkt_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "BKT_MACRO";
+      label = "AUTO_DBKT_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
@@ -391,9 +296,17 @@
       bindings = <&double_bkt>, <&kp>;
     };
 
-    dpar: par_macro {
+    bkts: tap_dance_bkts {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_BKTS";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&auto_dbkt 0 LBKT>, <&kp RBKT>;
+    };
+
+    auto_dpar: auto_dpar_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "PAR_MACRO";
+      label = "AUTO_DPAR_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
@@ -401,14 +314,30 @@
       bindings = <&double_par>, <&kp>;
     };
 
-    dbrc: brc_macro {
+    pars: tap_dance_pars {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_PARS";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&auto_pars 0 LPAR>, <&kp RPAR>;
+    };
+
+    auto_dbrc: auto_dbrc_macro {
       compatible = "zmk,behavior-hold-tap";
-      label = "BRC_MACRO";
+      label = "AUTO_DBRC_MACRO";
       #binding-cells = <2>;
       tapping-term-ms = <400>;
       quick-tap-ms = <150>;
       flavor = "balanced";
       bindings = <&double_brc>, <&kp>;
+    };
+
+    brcs: tap_dance_brcs {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_BRCS";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&auto_brcs 0 LBRC>, <&kp RBRC>;
     };
 
     cmdtab: cmdtab {
@@ -467,22 +396,22 @@
       >;
     };
 
-    nav {
-      label = "NAV";
+    lower {
+      label = "LOWER";
       bindings = <
-        &none      &kp HOME      &kp LS(LA(COMMA))  &kp END        &kp RG(LS(Z))      &none   &kp PG_UP  &none   &none  &none
-        &kp LSHFT  &kp LEFT      &kp UP             &kp RIGHT      &kp LA(LS(DOT))    &none   &kp PG_DN  &none   &none  &none
-        &kp RG(Z)  &kp LA(LEFT)  &kp DOWN           &kp LA(RIGHT)  &none              &none   &none      &none   &none  &none
-                                 &trans             &trans         &trans             &trans  &trans     &trans
+        &none      &kp LA(LEFT)  &kp LS(LA(COMMA))  &kp LA(RIGHT)  &none              &kp PG_UP  &kp F1  &kp F2   &kp F3   &kp F4
+        &kp LSHFT  &kp LEFT      &kp UP             &kp RIGHT      &kp LA(LS(DOT))    &kp PG_DN  &kp F5  &kp F6   &kp F7   &kp F8
+        &none      &kp HOME      &kp DOWN           &kp END        &none              &none      &kp F9  &kp F10  &kp F11  &kp F12
+                                 &trans             &trans         &trans             &trans     &trans     &trans
       >;
     };
 
-    num {
-      label = "NUM";
+    raise {
+      label = "RAISE";
       bindings = <
-        &kp F1  &kp F2   &kp F3   &kp F4   &none     &kp RA(N2)  &kp N7  &kp N8  &kp N9  &none
-        &kp F5  &kp F6   &kp F7   &kp F8   &none     &kp LS(N3)  &kp N4  &kp N5  &kp N6  &kp N0
-        &kp F9  &kp F10  &kp F11  &kp F12  &none     &kp DLLR    &kp N1  &kp N2  &kp N3  &kp DOT
+        &tgrave 0 GRAVE  &kp AT      &kp RA(N3)  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &none  &none
+        &kp N1           &kp N2      &kp N3      &kp N4    &kp N5       &kp N6     &kp N7    &kp N8    &kp N9  &kp N0
+        &kp LS(GRAVE)    &kp RA(N2)  &kp HASH    &none     &none        &none      &kp PIPE  &trans    &trans  &trans
                          &trans   &trans   &trans    &trans      &trans  &trans
       >;
     };
@@ -510,10 +439,10 @@
     sys {
       label = "SYS";
       bindings = <
-        &kp LS(LA(KP_N1))  &kp LS(LA(KP_N2))  &kp LS(LA(KP_N3))    &kp LS(LA(KP_N4))     &none    &none  &none         &none         &none         &bt BT_CLR
-        &kp LS(LA(KP_N5))  &kp LS(LA(KP_N6))  &kp LS(LA(KP_N7))    &kp LS(LA(KP_N8))     &none    &none  &bt BT_SEL 3  &bt BT_SEL 4  &none         &none
-        &kp LS(LA(KP_N9))  &kp LS(LA(KP_N0))  &kp LS(LA(KP_PLUS))  &kp LS(LA(KP_MINUS))  &none    &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none
-                                                      &none                    &none                     &none    &none  &none         &none
+        &kp LS(LA(KP_N1))  &kp LS(LA(KP_N2))  &kp LS(LA(KP_N3))    &kp LS(LA(KP_N4))     &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+        &kp LS(LA(KP_N5))  &kp LS(LA(KP_N6))  &kp LS(LA(KP_N7))    &kp LS(LA(KP_N8))     &none    &none         &none         &none         &none         &none
+        &kp LS(LA(KP_N9))  &kp LS(LA(KP_N0))  &kp LS(LA(KP_PLUS))  &kp LS(LA(KP_MINUS))  &none    &none         &none         &none         &none         &bt BT_CLR
+                                              &none                &none                 &none    &none         &none         &none
       >;
     };
   };
