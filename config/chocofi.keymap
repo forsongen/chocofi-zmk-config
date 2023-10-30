@@ -319,7 +319,7 @@
       label = "TAP_DANCE_PARS";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&auto_pars 0 LPAR>, <&kp RPAR>;
+      bindings = <&auto_dpar 0 LPAR>, <&kp RPAR>;
     };
 
     auto_dbrc: auto_dbrc_macro {
@@ -337,7 +337,7 @@
       label = "TAP_DANCE_BRCS";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&auto_brcs 0 LBRC>, <&kp RBRC>;
+      bindings = <&auto_dbrc 0 LBRC>, <&kp RBRC>;
     };
 
     cmdtab: cmdtab {
