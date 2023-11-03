@@ -36,15 +36,8 @@
     };
 
     enter {
-      key-positions = <23 22>;
+      key-positions = <13 12>;
       bindings = <&kp ENTER>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    esc {
-      key-positions = <13 14>;
-      bindings = <&kp ESC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -58,7 +51,7 @@
 
     tab {
       bindings = <&kp TAB>;
-      key-positions = <2 12>;
+      key-positions = <11 12>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -102,7 +95,7 @@
 
     paste {
       bindings = <&kp RG(V)>;
-      key-positions = <23 24>;
+      key-positions = <23 22>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
