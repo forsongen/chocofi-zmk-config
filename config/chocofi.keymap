@@ -16,6 +16,10 @@
   quick-release;
 };
 
+&sl {
+  release-after-ms = <2000>;
+};
+
 / {
   // COMBOS
 
@@ -23,6 +27,20 @@
     compatible = "zmk,combos";
 
     // --> KEYCODES
+
+    esc {
+      key-positions = <1 11>;
+      bindings = <&kp ESC>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    enter {
+      key-positions = <23 22>;
+      bindings = <&kp ENTER>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
 
     esc {
       key-positions = <13 14>;
@@ -40,7 +58,7 @@
 
     tab {
       bindings = <&kp TAB>;
-      key-positions = <1 11>;
+      key-positions = <2 12>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -84,7 +102,7 @@
 
     paste {
       bindings = <&kp RG(V)>;
-      key-positions = <23 22>;
+      key-positions = <23 24>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
@@ -262,20 +280,40 @@
       bindings = <&kp>, <&kp>;
     };
 
-    lsm: layer_sticky_mods {
+    lsm: layer_sticky_mod {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      label = "LAYER_STICKY_MODS";
+      label = "LAYER_STICKY_MOD";
       flavor = "tap-preferred";
       tapping-term-ms = <200>;
       quick-tap-ms = <150>;
       bindings = <&mo>, <&sk>;
     };
 
-    msm: mod_sticky_mods {
+    msl: mod_sticky_layer {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      label = "MOD_STICKY_MODS";
+      label = "MOD_STICKY_LAYER";
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+      bindings = <&kp>, <&sl>;
+    };
+
+    lsl: layer_sticky_layer {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      label = "LAYER_STICKY_LAYER";
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+      bindings = <&mo>, <&sl>;
+    };
+
+    msm: mod_sticky_mod {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      label = "MOD_STICKY_MOD";
       flavor = "hold-preferred";
       tapping-term-ms = <200>;
       quick-tap-ms = <150>;
@@ -393,10 +431,10 @@
     base {
       label = "BASE";
       bindings = <
-        &kp Q  &kp W  &kp F               &kp P        &kp B            &kp J         &kp L        &kp U                   &kp Y     &kp SQT
-        &kp A  &kp R  &kp S               &kp T        &kp G            &kp M         &kp N        &kp E                   &kp I     &kp O
-        &kp Z  &kp X  &kp C               &kp D        &kp V            &kp K         &kp H        &commacolon             &dotsemi  &qexcl
-                      &mt RS(RALT) ENTER  &lt 1 SPACE  &lsm 3 LSHFT     &lsm 4 RSHFT  &lt 2 SPACE  &lt 5 BSPC
+        &kp Q  &kp W  &kp F            &kp P        &kp B            &kp J         &kp L        &kp U                   &kp Y     &kp SQT
+        &kp A  &kp R  &kp S            &kp T        &kp G            &kp M         &kp N        &kp E                   &kp I     &kp O
+        &kp Z  &kp X  &kp C            &kp D        &kp V            &kp K         &kp H        &commacolon             &dotsemi  &qexcl
+                      &msl RS(RALT) 2  &lt 1 SPACE  &lsm 3 LSHFT     &lsm 4 RSHFT  &lt 2 SPACE  &lsl 5 2
       >;
     };
 
