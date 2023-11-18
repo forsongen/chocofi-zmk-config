@@ -3,10 +3,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE  0
-#define LOWER 1
-#define RAISE 2
-#define MEDIA 3
-#define SYS	  4
+#define NAV   1
+#define SYM   2
+#define NUM   3
+#define MEDIA 4
+#define SYS	  5
 
 &mt {
   hold-while-undecided;
@@ -197,7 +198,7 @@
       key-positions = <18 28>;
       bindings = <&kp RBKT>;
       timeout-ms = <40>;
-    };
+    };12
   };
 
   // MACROS
@@ -298,6 +299,25 @@
       bindings = <&kp>, <&sk>;
     };
 
+lsl: layer_sticky_layer {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      label = "LAYER_STICKY_LAYER";
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
+      bindings = <&mo>, <&sl>;
+    };
+
+    mtog: mod_tog {
+      compatible = "zmk,behavior-hold-tap";
+      label = "mod_tog";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&mo>, <&tog>;
+    };
+
     // --> KEYMAP
 
     tgrave: grave_macro {
@@ -376,31 +396,6 @@
       ignored-key-positions = <1>;
     };
 
-    // --> MOD MORPH
-
-    commacolon: comma_colon {
-      compatible = "zmk,behavior-mod-morph";
-      label = "COMMA_COLON";
-      #binding-cells = <0>;
-      bindings = <&kp COMMA>, <&kp COLON>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    dotsemi: dot_semi {
-      compatible = "zmk,behavior-mod-morph";
-      label = "DOT_SEMI";
-      #binding-cells = <0>;
-      bindings = <&kp DOT>, <&kp SEMI>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    qexcl: qmark_excl {
-      compatible = "zmk,behavior-mod-morph";
-      label = "QMARK_EXCL";
-      #binding-cells = <0>;
-      bindings = <&kp QMARK>, <&kp EXCL>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-  };
-
   // KEYMAP
 
   keymap {
@@ -409,25 +404,35 @@
     base {
       label = "BASE";
       bindings = <
-        &kp QUOTE  &kp COMMA  &kp DOT        &kp P            &kp Y             &kp F             &kp G        &kp C                   &kp R     &kp L
-        &kp A      &kp O      &kp E          &kp U            &kp I             &kp D             &kp H        &kp T                   &kp N     &kp S
-        &kp SEMI   &kp Q      &kp J          &kp K            &kp X             &kp B             &kp M        &kp W             &kp V  kp Z
-                              &lt SYS ENTER  &lt LOWER SPACE  &mt LSHFT BSPC    &lsm MEDIA RSHFT  &lsm 2 RSHFT  &lt SYS 
+        &kp QUOTE  &kp COMMA  &kp DOT        &kp P          &kp Y               &kp F             &kp G           &kp C         &kp R  &kp L
+        &kp A      &kp O      &kp E          &kp U          &kp I               &kp D             &kp H           &kp T         &kp N  &kp S
+        &kp SEMI   &kp Q      &kp J          &kp K          &kp X               &kp B             &kp M           &kp W         &kp V  &kp Z
+                              &mtog SYS NAV  &lt NAV SPACE  &msm LSHFT LSHFT    &msm RSHFT RSHFT  &lsl MEDIA SYM  &lsl SYS NUM 
       >;
     };
 
-    lower {
-      label = "LOWER";
+    nav {
+      label = "NAV";
       bindings = <
-        &none      &kp HOME  &kp LS(LA(COMMA))  &kp LA(RIGHT)  &none              &kp PG_UP  &kp F1  &kp F2   &kp F3   &kp F4
-        &kp LSHFT  &kp LEFT      &kp UP             &kp RIGHT      &kp LA(LS(DOT))    &kp PG_DN  &kp F5  &kp F6   &kp F7   &kp F8
-        &ctrltab   &cmdtab      &kp DOWN           &kp END        &none              &none      &kp F9  &kp F10  &kp F11  &kp F12
-                                 &trans             &trans         &trans             &trans     &trans     &trans
+        &kp HOME   &kp LA(LEFT)  &none     &kp LA(RIGHT)  &kp END    &kp PG_UP  &none   &none  &none  &none
+        &kp LSHFT  &kp LEFT      &kp UP    &kp RIGHT      &none      &kp PG_DN  &none   &none  &none  &none
+        &cmdtab    &ctrltab      &kp DOWN  &kp BSPC       &kp DEL    &none      &none   &none  &none  &none
+                                 &trans    &trans         &trans     &trans     &trans  &trans
       >;
     };
 
-    raise {
-      label = "RAISE";
+    sym {
+      label = "SYM";
+      bindings = <
+        &tgrave 0 GRAVE  &kp AT      &kp RA(N3)  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &none  &none
+        &kp EXCL           &kp AT    &kp RA(N3)  &kp DLLR  &kp PLUS     &kp EQUAL  &kp AMPS  &kp STAR  &kp N9  &kp N0
+        &kp LS(GRAVE)    &kp RA(N2)  &kp HASH    &none     &none        &none      &kp PIPE  &trans    &trans  &trans
+                         &trans   &trans   &trans    &trans      &trans  &trans
+      >;
+    };
+
+    num {
+      label = "NUM";
       bindings = <
         &tgrave 0 GRAVE  &kp AT      &kp RA(N3)  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &none  &none
         &kp N1           &kp N2      &kp N3      &kp N4    &kp N5       &kp N6     &kp N7    &kp N8    &kp N9  &kp N0
