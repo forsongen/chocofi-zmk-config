@@ -423,7 +423,7 @@
     sym {
       label = "SYM";
       bindings = <
-        &tgrave 0 GRAVE  &kp LS(GRAVE)  &dbkt 0 LBKT  &ltgt 0 LT    &kp PRCNT    &kp CARET  &kp GT    &kp RBKT  &kp QMARK  &FSLH
+        &tgrave 0 GRAVE  &kp LS(GRAVE)  &dbkt 0 LBKT  &ltgt 0 LT    &kp PRCNT    &kp CARET  &kp GT    &kp RBKT  &kp QMARK  &kp FSLH
         &kp EXCL         &kp AT         &kp RA(N3)    &kp DLLR      &kp PLUS     &kp EQUAL  &kp AMPS  &kp STAR  &kp UNDER  &kp MINUS
         &none            &none          &dbrc 0 LBRC  &dpar 0 LPAR  &none        &none      &kp RPAR  &kp RBRC  &kp PIPE   &nline 0 BSLH
                                         &trans        &trans        &trans       &trans     &trans    &trans
