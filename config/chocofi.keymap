@@ -394,6 +394,7 @@
       bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
       ignored-key-positions = <1>;
     };
+  };
 
   // KEYMAP
 
