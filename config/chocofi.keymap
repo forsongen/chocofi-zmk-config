@@ -132,7 +132,7 @@
     };
 
     rguialt {
-      bindings = <&kp RG(ALT)>;
+      bindings = <&kp RG(RALT)>;
       key-positions = <16 17 18>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
