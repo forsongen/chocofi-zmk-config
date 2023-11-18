@@ -32,48 +32,150 @@
     // --> KEYCODES
 
     esc {
-      key-positions = <1 11>;
+      key-positions = <0 1>;
       bindings = <&kp ESC>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    caps {
-      key-positions = <1 2>;
-      bindings = <&kp CAPS>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     tab {
       bindings = <&kp TAB>;
-      key-positions = <11 12>;
+      key-positions = <1 2>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    enter {
+      bindings = <&kp ENTER>;
+      key-positions = <2 3>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     backspace {
-      key-positions = <3 13>;
+      key-positions = <6 7>;
       bindings = <&kp BSPC>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
     del {
-      key-positions = <4 14>;
+      key-positions = <7 8>;
       bindings = <&kp DEL>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
 
-    // --> SHORTCUTS
+    // --> MODS
 
-    num {
-      bindings = <&tog 2>;
-      key-positions = <7 8>;
+    lctrl {
+      key-positions = <10 11>;
+      bindings = <&kp LCTRL>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
+
+    lalt {
+      bindings = <&kp LALT>;
+      key-positions = <11 12>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    lgui {
+      bindings = <&kp LGUI>;
+      key-positions = <12 13>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    lctrlalt {
+      key-positions = <10 11 12>;
+      bindings = <&kp LC(LALT)>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    laltgui {
+      bindings = <&kp LA(LGUI)>;
+      key-positions = <11 12 13>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    lctrlaltgui {
+      key-positions = <10 11 12 13>;
+      bindings = <&kp LC(LA(LGUI))>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    rgui {
+      bindings = <&kp RGUI>;
+      key-positions = <16 17>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    ralt {
+      bindings = <&kp RALT>;
+      key-positions = <17 18>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    rctrl {
+      key-positions = <18 19>;
+      bindings = <&kp RCTRL>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    rguialt {
+      bindings = <&kp RG(ALT)>;
+      key-positions = <16 17 18>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    raltctrl {
+      key-positions = <17 18 19>;
+      bindings = <&kp RA(RCTRL)>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    rguialtctrl {
+      key-positions = <16 17 18 19>;
+      bindings = <&kp RG(RA(RCTRL))>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    // --> LOCKS
+
+    caps {
+      key-positions = <32 33>;
+      bindings = <&kp CAPS>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    sym {
+      key-positions = <26 27>;
+      bindings = <&tog SYM>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+   num {
+      key-positions = <27 28>;
+      bindings = <&tog NUM>;
+      timeout-ms = <40>;
+      require-prior-idle-ms = <200>;
+    };
+
+    // --> SHORTCUTS
 
     cut {
       bindings = <&kp RG(X)>;
@@ -91,70 +193,10 @@
 
     paste {
       bindings = <&kp RG(V)>;
-      key-positions = <23 22>;
+      key-positions = <22 23>;
       timeout-ms = <40>;
       require-prior-idle-ms = <200>;
     };
-
-    undo {
-      bindings = <&kp RG(Z)>;
-      key-positions = <2 3>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    redo {
-      bindings = <&kp LS(RG(Z))>;
-      key-positions = <3 4>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    // --> SYMBOLS
-
-    backslash {
-      key-positions = <26 27>;
-      bindings = <&newline 0 BSLH>;
-      timeout-ms = <40>;
-    };    
-
-    forwardslash {
-      key-positions = <27 28>;
-      bindings = <&kp SLASH>;
-      timeout-ms = <40>;
-    };
-
-    underscore {
-      key-positions = <15 16>;
-      bindings = <&kp UNDER>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    equals {
-      key-positions = <16 17>;
-      bindings = <&kp EQUAL>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    minus {
-      bindings = <&kp MINUS>;
-      key-positions = <17 18>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-    plus {
-      key-positions = <6 7>;
-      bindings = <&kp PLUS>;
-      timeout-ms = <40>;
-      require-prior-idle-ms = <200>;
-    };
-
-      bindings = <&dbrc 0 LBRC>;
-      bindings = <&ltgt 0 LT>;
-      bindings = <&dbkt 0 LBKT>;
   };
 
   // MACROS
@@ -201,6 +243,7 @@
   // BEHAVIOURS
 
   behaviors {
+
     // --> GENERAL
 
     ht: hold_tap {
@@ -255,7 +298,7 @@
       bindings = <&kp>, <&sk>;
     };
 
-lsl: layer_sticky_layer {
+    lsl: layer_sticky_layer {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       label = "LAYER_STICKY_LAYER";
@@ -265,9 +308,9 @@ lsl: layer_sticky_layer {
       bindings = <&mo>, <&sl>;
     };
 
-    mtog: mod_tog {
+    mtog: mo_tog {
       compatible = "zmk,behavior-hold-tap";
-      label = "mod_tog";
+      label = "mo_tog";
       #binding-cells = <2>;
       flavor = "hold-preferred";
       tapping-term-ms = <200>;
@@ -286,7 +329,7 @@ lsl: layer_sticky_layer {
       bindings = <&triple_grave_macro>, <&kp>;
     };
 
-    newline: bslh_newline_macro {
+    nline: bslh_newline_macro {
       compatible = "zmk,behavior-hold-tap";
       label = "BSLH_NEWLINE_MACRO";
       #binding-cells = <2>;
@@ -377,14 +420,12 @@ lsl: layer_sticky_layer {
       >;
     };
 
-bindings = <&dbrc 0 LBRC>;
-
     sym {
       label = "SYM";
       bindings = <
         &tgrave 0 GRAVE  &kp LS(GRAVE)  &dbkt 0 LBKT  &ltgt 0 LT    &kp PRCNT    &kp CARET  &kp GT    &kp RBKT  &kp QMARK  &FSLH
         &kp EXCL         &kp AT         &kp RA(N3)    &kp DLLR      &kp PLUS     &kp EQUAL  &kp AMPS  &kp STAR  &kp UNDER  &kp MINUS
-        &none            &none          &dbrc 0 LBRC  &dpar 0 LPAR  &none        &none      &kp RPAR  &kp RBRC  &kp PIPE   &kp BSLH
+        &none            &none          &dbrc 0 LBRC  &dpar 0 LPAR  &none        &none      &kp RPAR  &kp RBRC  &kp PIPE   &nline 0 BSLH
                                         &trans        &trans        &trans       &trans     &trans    &trans
       >;
     };
