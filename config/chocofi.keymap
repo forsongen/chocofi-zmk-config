@@ -502,7 +502,7 @@
     caps {
       label = "CAPS";
       bindings = <
-        &kp LS(W)  &kp LS(L)  &kp LS(Y)      &kp LS(P)      &kp LS(B)    &kp LS(Z)    &kp LS(F)  &kp LS(O)  &kp LS(U   &kp SQT
+        &kp LS(W)  &kp LS(L)  &kp LS(Y)      &kp LS(P)      &kp LS(B)    &kp LS(Z)    &kp LS(F)  &kp LS(O)  &kp LS(U)  &kp SQT
         &kp LS(C)  &kp LS(R)  &kp LS(S)      &kp LS(T)      &kp LS(G)    &kp LS(M)    &kp LS(N)  &kp LS(E)  &kp LS(I)  &kp LS(A)
         &kp LS(Q)  &kp LS(J)  &kp LS(V)      &kp LS(D)      &kp LS(K)    &kp LS(X)    &kp LS(H)  &kp FSLH   &commaco   &dotsemi
                               &lt SYS ENTER  &lt NAV SPACE  &tog CAPS    &tog CAPS    &supersym  &bspcdel
