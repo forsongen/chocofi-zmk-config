@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: forsongen
-      revision: chocofi
+      revision: main
       import: app/west.yml
   self:
     path: config
