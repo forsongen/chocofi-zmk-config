@@ -67,7 +67,7 @@
     // --> MODS
 
     lctrl {
-      key-positions = <10 11>;
+      key-positions = <0 1>;
       bindings = <&kp LCTRL>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -75,7 +75,7 @@
     };
 
     lalt {
-      key-positions = <11 12>;
+      key-positions = <1 2>;
       bindings = <&kp LALT>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -83,7 +83,7 @@
     };
 
     lgui {
-      key-positions = <12 13>;
+      key-positions = <2 3>;
       bindings = <&kp LGUI>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -91,7 +91,7 @@
     };
 
     lctrlalt {
-      key-positions = <10 11 12>;
+      key-positions = <0 1 1>;
       bindings = <&kp LC(LALT)>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -99,7 +99,7 @@
     };
 
     laltgui {
-      key-positions = <11 12 13>;
+      key-positions = <1 2 1>;
       bindings = <&kp LA(LGUI)>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -107,7 +107,7 @@
     };
 
     lctrlaltgui {
-      key-positions = <10 11 12 13>;
+      key-positions = <0 1 2 3>;
       bindings = <&kp LC(LA(LGUI))>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -115,7 +115,7 @@
     };
 
     rgui {
-      key-positions = <16 17>;
+      key-positions = <6 7>;
       bindings = <&kp RGUI>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -123,7 +123,7 @@
     };
 
     ralt {
-      key-positions = <17 18>;
+      key-positions = <7 8>;
       bindings = <&kp RALT>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -131,7 +131,7 @@
     };
 
     rctrl {
-      key-positions = <18 19>;
+      key-positions = <8 9>;
       bindings = <&kp RCTRL>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -139,7 +139,7 @@
     };
 
     rguialt {
-      key-positions = <16 17 18>;
+      key-positions = <6 7 8>;
       bindings = <&kp RG(RALT)>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -147,7 +147,7 @@
     };
 
     raltctrl {
-      key-positions = <17 18 19>;
+      key-positions = <7 8 9>;
       bindings = <&kp RA(RCTRL)>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
@@ -155,7 +155,7 @@
     };
 
     rguialtctrl {
-      key-positions = <16 17 18 19>;
+      key-positions = <6 7 8 9>;
       bindings = <&kp RG(RA(RCTRL))>;
       timeout-ms = <40>;
       layers = <0 2 3 4>;
