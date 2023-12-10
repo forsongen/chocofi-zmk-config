@@ -35,7 +35,7 @@
     // --> KEYCODES
 
     esc {
-      key-positions = <11 12>;
+      key-positions = <10 11>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
       layers = <BASE CAPS SYM SYML NUM>;
@@ -43,7 +43,7 @@
     };
 
     tab {
-      key-positions = <12 13>;
+      key-positions = <11 12>;
       bindings = <&kp TAB>;
       timeout-ms = <40>;
       layers = <BASE CAPS SYM SYML NUM>;
