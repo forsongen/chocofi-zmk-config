@@ -3,10 +3,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE  0
-#define NAV   1
-#define SYM   2
-#define NUM   3
-#define SYS	  4
+#define CAPS  1
+#define NAV   2
+#define SYM   3
+#define NUM   4
+#define SYS	  5
 
 #define BT(n) BT_SEL n
 
@@ -36,7 +37,7 @@
       key-positions = <11 12>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
-      layers = <0 2 3>;
+      layers = <BASE CAPS SYM NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -44,7 +45,7 @@
       key-positions = <12 13>;
       bindings = <&kp TAB>;
       timeout-ms = <40>;
-      layers = <0 2 3>;
+      layers = <BASE CAPS SYM NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -52,7 +53,7 @@
       key-positions = <21 22>;
       bindings = <&kp BSPC>;
       timeout-ms = <40>;
-      layers = <0 2 3>;
+      layers = <BASE CAPS SYM NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -60,7 +61,7 @@
       key-positions = <22 23>;
       bindings = <&kp DEL>;
       timeout-ms = <40>;
-      layers = <0 2 3>;
+      layers = <BASE CAPS SYM NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -68,7 +69,7 @@
       key-positions = <32 33>;
       bindings = <&kp CAPS>;
       timeout-ms = <40>;
-      layers = <0 2 3>;
+      layers = <BASE CAPS SYM NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -78,7 +79,7 @@
       key-positions = <0 1>;
       bindings = <&kp LCTRL>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -86,7 +87,7 @@
       key-positions = <1 2>;
       bindings = <&kp LALT>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -94,7 +95,7 @@
       key-positions = <2 3>;
       bindings = <&kp LGUI>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -102,7 +103,7 @@
       key-positions = <0 1 1>;
       bindings = <&kp LC(LALT)>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -110,7 +111,7 @@
       key-positions = <1 2 1>;
       bindings = <&kp LA(LGUI)>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -118,7 +119,7 @@
       key-positions = <0 1 2 3>;
       bindings = <&kp LC(LA(LGUI))>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -126,7 +127,7 @@
       key-positions = <6 7>;
       bindings = <&kp RGUI>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -134,7 +135,7 @@
       key-positions = <7 8>;
       bindings = <&kp RALT>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -142,7 +143,7 @@
       key-positions = <8 9>;
       bindings = <&kp RCTRL>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -150,7 +151,7 @@
       key-positions = <6 7 8>;
       bindings = <&kp RG(RALT)>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -158,7 +159,7 @@
       key-positions = <7 8 9>;
       bindings = <&kp RA(RCTRL)>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -166,7 +167,7 @@
       key-positions = <6 7 8 9>;
       bindings = <&kp RG(RA(RCTRL))>;
       timeout-ms = <40>;
-      layers = <0 2 3 4>;
+      layers = <BASE CAPS SYM NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -175,49 +176,49 @@
     quit {
       key-positions = <0 1>;
       bindings = <&kp RG(Q)>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
     undo {
       key-positions = <1 2>;
       bindings = <&kp RG(Z)>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
     redo {
       key-positions = <2 3>;
       bindings = <&kp RG(RS(Z))>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
     all {
       key-positions = <10 11>;
       bindings = <&kp RG(A)>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
     find {
       key-positions = <11 12>;
       bindings = <&kp RG(F)>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
     newtab {
       key-positions = <12 13>;
       bindings = <&kp RG(T)>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
     new {
       key-positions = <13 14>;
       bindings = <&kp RG(N)>;
-      layers = <1>;
+      layers = <NAV>;
       timeout-ms = <40>;
     };
 
@@ -225,7 +226,7 @@
       key-positions = <20 21>;
       bindings = <&kp RG(X)>;
       timeout-ms = <40>;
-      layers = <1>;
+      layers = <NAV>;
       require-prior-idle-ms = <200>;
     };
 
@@ -233,7 +234,7 @@
       key-positions = <21 22>;
       bindings = <&kp RG(C)>;
       timeout-ms = <40>;
-      layers = <1>;
+      layers = <NAV>;
       require-prior-idle-ms = <200>;
     };
 
@@ -241,7 +242,7 @@
       key-positions = <22 23>;
       bindings = <&kp RG(V)>;
       timeout-ms = <40>;
-      layers = <1>;
+      layers = <NAV>;
       require-prior-idle-ms = <200>;
     };
   };
@@ -469,7 +470,7 @@
       compatible = "zmk,behavior-mod-morph";
       label = "SUPERSHIFT";
       #binding-cells = <0>;
-      bindings = <&msm RSHFT RSHFT>, <&caps_word>;
+      bindings = <&msm RSHFT RSHFT>, <&tog CAPS>;
       mods = <(MOD_RSFT)>;
     };
     supersym: supersym {
@@ -495,6 +496,16 @@
         &kp C  &kp R  &kp S          &kp T          &kp G          &kp M        &kp N      &kp E     &kp I     &kp A
         &kp Q  &kp J  &kp V          &kp D          &kp K          &kp X        &kp H      &kp FSLH  &commaco  &dotsemi
                       &lt SYS ENTER  &lt NAV SPACE  &supershift    &supershift  &supersym  &bspcdel
+      >;
+    };
+
+    caps {
+      label = "CAPS";
+      bindings = <
+        &kp LS(W)  &kp LS(L)  &kp LS(Y)      &kp LS(P)      &kp LS(B)    &kp LS(Z)    &kp LS(F)  &kp LS(O)  &kp LS(U   &kp SQT
+        &kp LS(C)  &kp LS(R)  &kp LS(S)      &kp LS(T)      &kp LS(G)    &kp LS(M)    &kp LS(N)  &kp LS(E)  &kp LS(I)  &kp LS(A)
+        &kp LS(Q)  &kp LS(J)  &kp LS(V)      &kp LS(D)      &kp LS(K)    &kp LS(X)    &kp LS(H)  &kp FSLH   &commaco   &dotsemi
+                              &lt SYS ENTER  &lt NAV SPACE  &tog CAPS    &tog CAPS    &supersym  &bspcdel
       >;
     };
 
