@@ -6,8 +6,9 @@
 #define CAPS  1
 #define NAV   2
 #define SYM   3
-#define NUM   4
-#define SYS	  5
+#define SYML  4
+#define NUM   5
+#define SYS	  6
 
 #define BT(n) BT_SEL n
 
@@ -37,7 +38,7 @@
       key-positions = <11 12>;
       bindings = <&kp ESC>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM>;
+      layers = <BASE CAPS SYM SYML NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -45,7 +46,7 @@
       key-positions = <12 13>;
       bindings = <&kp TAB>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM>;
+      layers = <BASE CAPS SYM SYML NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -53,7 +54,7 @@
       key-positions = <21 22>;
       bindings = <&kp BSPC>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM>;
+      layers = <BASE CAPS SYM SYML NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -61,15 +62,7 @@
       key-positions = <22 23>;
       bindings = <&kp DEL>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM>;
-      require-prior-idle-ms = <200>;
-    };
-
-    caps {
-      key-positions = <32 33>;
-      bindings = <&kp CAPS>;
-      timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM>;
+      layers = <BASE CAPS SYM SYML NUM>;
       require-prior-idle-ms = <200>;
     };
 
@@ -79,7 +72,7 @@
       key-positions = <0 1>;
       bindings = <&kp LCTRL>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -87,7 +80,7 @@
       key-positions = <1 2>;
       bindings = <&kp LALT>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -95,7 +88,7 @@
       key-positions = <2 3>;
       bindings = <&kp LGUI>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -103,7 +96,7 @@
       key-positions = <0 1 1>;
       bindings = <&kp LC(LALT)>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -111,7 +104,7 @@
       key-positions = <1 2 1>;
       bindings = <&kp LA(LGUI)>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -119,7 +112,7 @@
       key-positions = <0 1 2 3>;
       bindings = <&kp LC(LA(LGUI))>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -127,7 +120,7 @@
       key-positions = <6 7>;
       bindings = <&kp RGUI>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -135,7 +128,7 @@
       key-positions = <7 8>;
       bindings = <&kp RALT>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -143,7 +136,7 @@
       key-positions = <8 9>;
       bindings = <&kp RCTRL>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -151,7 +144,7 @@
       key-positions = <6 7 8>;
       bindings = <&kp RG(RALT)>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -159,7 +152,7 @@
       key-positions = <7 8 9>;
       bindings = <&kp RA(RCTRL)>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -167,7 +160,7 @@
       key-positions = <6 7 8 9>;
       bindings = <&kp RG(RA(RCTRL))>;
       timeout-ms = <40>;
-      layers = <BASE CAPS SYM NUM SYS>;
+      layers = <BASE CAPS SYM SYML NUM SYS>;
       require-prior-idle-ms = <200>;
     };
 
@@ -473,15 +466,6 @@
       bindings = <&msm RSHFT RSHFT>, <&tog CAPS>;
       mods = <(MOD_RSFT)>;
     };
-    supersym: supersym {
-      compatible = "zmk,behavior-mod-morph";
-      label = "SUPERSYM";
-      #binding-cells = <0>;
-      bindings = <&lsl NUM SYM>, <&tog SYM>;
-      mods = <(MOD_RSFT)>;
-    };
-    
-
   };
 
   // KEYMAP
@@ -492,20 +476,20 @@
     base {
       label = "BASE";
       bindings = <
-        &kp W  &kp L  &kp Y          &kp P          &kp B          &kp Z        &kp F      &kp O     &kp U     &kp SQT
-        &kp C  &kp R  &kp S          &kp T          &kp G          &kp M        &kp N      &kp E     &kp I     &kp A
-        &kp Q  &kp J  &kp V          &kp D          &kp K          &kp X        &kp H      &kp FSLH  &commaco  &dotsemi
-                      &lt SYS ENTER  &lt NAV SPACE  &supershift    &supershift  &supersym  &bspcdel
+        &kp W  &kp L  &kp Y          &kp P          &kp B          &kp Z        &kp F         &kp O     &kp U     &kp SQT
+        &kp C  &kp R  &kp S          &kp T          &kp G          &kp M        &kp N         &kp E     &kp I     &kp A
+        &kp Q  &kp J  &kp V          &kp D          &kp K          &kp X        &kp H         &kp FSLH  &commaco  &dotsemi
+                      &lt SYS ENTER  &lt NAV SPACE  &supershift    &supershift  &lsl NUM SYM  &bspcdel
       >;
     };
 
     caps {
       label = "CAPS";
       bindings = <
-        &kp LS(W)  &kp LS(L)  &kp LS(Y)      &kp LS(P)      &kp LS(B)    &kp LS(Z)    &kp LS(F)  &kp LS(O)  &kp LS(U)  &kp SQT
-        &kp LS(C)  &kp LS(R)  &kp LS(S)      &kp LS(T)      &kp LS(G)    &kp LS(M)    &kp LS(N)  &kp LS(E)  &kp LS(I)  &kp LS(A)
-        &kp LS(Q)  &kp LS(J)  &kp LS(V)      &kp LS(D)      &kp LS(K)    &kp LS(X)    &kp LS(H)  &kp FSLH   &commaco   &dotsemi
-                              &lt SYS ENTER  &lt NAV SPACE  &tog CAPS    &tog CAPS    &supersym  &bspcdel
+        &kp LS(W)  &kp LS(L)  &kp LS(Y)      &kp LS(P)      &kp LS(B)    &kp LS(Z)    &kp LS(F)     &kp LS(O)  &kp LS(U)  &kp SQT
+        &kp LS(C)  &kp LS(R)  &kp LS(S)      &kp LS(T)      &kp LS(G)    &kp LS(M)    &kp LS(N)     &kp LS(E)  &kp LS(I)  &kp LS(A)
+        &kp LS(Q)  &kp LS(J)  &kp LS(V)      &kp LS(D)      &kp LS(K)    &kp LS(X)    &kp LS(H)     &kp FSLH   &commaco   &dotsemi
+                              &lt SYS ENTER  &lt NAV SPACE  &tog CAPS    &tog CAPS    &lsl NUM SYM  &bspcdel
       >;
     };
 
@@ -525,7 +509,17 @@
         &tgrave 0 GRAVE  &dpar 0 LPAR  &kp RPAR  &kp SEMI  &kp AT        &kp PRCNT  &kp AMPS       &kp PIPE   &kp UNDER  &kp PLUS
         &dbrc 0 LBRC     &kp SQT       &kp DQT   &kp RBRC  &kp EXCL      &kp STAR   &ltgt 0 LT     &kp EQUAL  &kp MINUS  &kp GT
         &kp LS(GRAVE)    &dbkt 0 LBKT  &kp RBKT  &kp DLLR  &kp RA(N3)    &kp CARET  &nline 0 BSLH  &kp FSLH   &kp COMMA  &kp DOT
-                                       &trans    &trans    &trans        &trans     &mtog NUM SYM  &trans
+                                       &trans    &trans    &trans        &trans     &tog SYML       &trans
+      >;
+    };
+
+    syml {
+      label = "SYML";
+      bindings = <
+        &tgrave 0 GRAVE  &dpar 0 LPAR  &kp RPAR  &kp SEMI  &kp AT        &kp PRCNT  &kp AMPS        &kp PIPE   &kp UNDER  &kp PLUS
+        &dbrc 0 LBRC     &kp SQT       &kp DQT   &kp RBRC  &kp EXCL      &kp STAR   &ltgt 0 LT      &kp EQUAL  &kp MINUS  &kp GT
+        &kp LS(GRAVE)    &dbkt 0 LBKT  &kp RBKT  &kp DLLR  &kp RA(N3)    &kp CARET  &nline 0 BSLH   &kp FSLH   &kp COMMA  &kp DOT
+                                       &trans    &trans    &trans        &trans     &mtog NUM SYML  &trans
       >;
     };
 
