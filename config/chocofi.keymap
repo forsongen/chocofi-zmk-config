@@ -349,13 +349,13 @@
       bindings = <&mo>, <&sl>;
     };
 
-    mtog: mo_tog {
+    mto: mo_to {
       compatible = "zmk,behavior-hold-tap";
-      label = "mo_tog";
+      label = "mo_to";
       #binding-cells = <2>;
       flavor = "hold-preferred";
       tapping-term-ms = <200>;
-      bindings = <&mo>, <&tog>;
+      bindings = <&mo>, <&to>;
     };
 
     // --> KEYMAP
@@ -519,7 +519,7 @@
         &tgrave 0 GRAVE  &dpar 0 LPAR  &kp RPAR  &kp SEMI  &kp AT        &kp PRCNT  &kp AMPS        &kp PIPE   &kp UNDER  &kp PLUS
         &dbrc 0 LBRC     &kp SQT       &kp DQT   &kp RBRC  &kp EXCL      &kp STAR   &ltgt 0 LT      &kp EQUAL  &kp MINUS  &kp GT
         &kp LS(GRAVE)    &dbkt 0 LBKT  &kp RBKT  &kp DLLR  &kp RA(N3)    &kp CARET  &nline 0 BSLH   &kp FSLH   &kp COMMA  &kp DOT
-                                       &trans    &trans    &trans        &trans     &mtog NUM SYML  &trans
+                                       &trans    &trans    &trans        &trans     &mto NUM BASE   &trans
       >;
     };
 
