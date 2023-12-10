@@ -427,6 +427,7 @@
 
     td_sym: tap_dance_sym {
       compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_SYM";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
       bindings = <&lsl NUM SYM>, <&to SYM>;
@@ -434,6 +435,7 @@
 
     td_shft: tap_dance_shft {
       compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_SHFT";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
       bindings = <&msm LSHFT LSHFT>, <&kp CAPS>;
