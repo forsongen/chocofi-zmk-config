@@ -455,6 +455,13 @@
       bindings = <&msm RSHFT RSHFT>, <&kp CAPS>;
       mods = <(MOD_RSFT)>;
     };
+    supersym: supersym {
+      compatible = "zmk,behavior-mod-morph";
+      label = "SUPERSYM";
+      #binding-cells = <0>;
+      bindings = <&lsl NUM SYM>, <&tog SYM>;
+      mods = <(MOD_RSFT)>;
+    };
     
 
   };
@@ -467,10 +474,10 @@
     base {
       label = "BASE";
       bindings = <
-        &kp W  &kp L  &kp Y          &kp P          &kp B          &kp Z        &kp F         &kp O     &kp U     &kp SQT
-        &kp C  &kp R  &kp S          &kp T          &kp G          &kp M        &kp N         &kp E     &kp I     &kp A
-        &kp Q  &kp J  &kp V          &kp D          &kp K          &kp X        &kp H         &kp FSLH  &commaco  &dotsemi
-                      &lt SYS ENTER  &lt NAV SPACE  &supershift    &supershift  &lsl NUM SYM  &bspcdel
+        &kp W  &kp L  &kp Y          &kp P          &kp B          &kp Z        &kp F      &kp O     &kp U     &kp SQT
+        &kp C  &kp R  &kp S          &kp T          &kp G          &kp M        &kp N      &kp E     &kp I     &kp A
+        &kp Q  &kp J  &kp V          &kp D          &kp K          &kp X        &kp H      &kp FSLH  &commaco  &dotsemi
+                      &lt SYS ENTER  &lt NAV SPACE  &supershift    &supershift  &supersym  &bspcdel
       >;
     };
 
@@ -490,7 +497,7 @@
         &tgrave 0 GRAVE  &dpar 0 LPAR  &kp RPAR  &kp SEMI  &kp AT        &kp PRCNT  &kp AMPS       &kp PIPE   &kp UNDER  &kp PLUS
         &dbrc 0 LBRC     &kp SQT       &kp DQT   &kp RBRC  &kp EXCL      &kp STAR   &ltgt          &kp EQUAL  &kp MINUS  &kp GT
         &kp LS(GRAVE)    &dbkt 0 LBKT  &kp RBKT  &kp DLLR  &kp RA(N3)    &kp CARET  &nline 0 BSLH  &kp FSLH   &kp COMMA  &kp DOT
-                                       &trans    &trans    &trans        &trans     &to BASE       &trans
+                                       &trans    &trans    &trans        &trans     &supersym      &trans
       >;
     };
 
