@@ -425,21 +425,38 @@
       ignored-key-positions = <1>;
     };
 
-    td_sym: tap_dance_sym {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_SYM";
-      #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&lsl NUM SYM>, <&to SYM>;
-    };
+    // --> MOD MORPH
 
-    td_shft: tap_dance_shft {
-      compatible = "zmk,behavior-tap-dance";
-      label = "TAP_DANCE_SHFT";
+    commaco: comma_colon {
+      compatible = "zmk,behavior-mod-morph";
+      label = "COMMA_COLON";
       #binding-cells = <0>;
-      tapping-term-ms = <200>;
-      bindings = <&msm LSHFT LSHFT>, <&kp CAPS>;
+      bindings = <&kp COMMA>, <&kp COLON>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    dotsemi: dot_semi {
+      compatible = "zmk,behavior-mod-morph";
+      label = "DOT_SEMI";
+      #binding-cells = <0>;
+      bindings = <&kp DOT>, <&kp SEMI>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bspcdel: bspc_del {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BSPC_DEL";
+      #binding-cells = <0>;
+      bindings = <&bp BSPC, <&kp DEL>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    supershift: supershift {
+      compatible = "zmk,behavior-mod-morph";
+      label = "SUPERSHIFT";
+      #binding-cells = <0>;
+      bindings = <&msm RSHFT RSHFT>, <&kp CAPS>;
+      mods = <(MOD_RSFT)>;
+    };
+    
+
   };
 
   // KEYMAP
@@ -450,10 +467,10 @@
     base {
       label = "BASE";
       bindings = <
-        &kp W  &kp L  &kp Y          &kp P          &kp B       &kp Z     &kp F    &kp O     &kp U      &kp SQT
-        &kp C  &kp R  &kp S          &kp T          &kp G       &kp M     &kp N    &kp E     &kp I      &kp A
-        &kp Q  &kp J  &kp V          &kp D          &kp K       &kp X     &kp H    &kp FSLH  &kp COMMA  &kp DOT
-                      &lt SYS ENTER  &lt NAV SPACE  &td_shft    &td_shft  &td_sym  &kp BSPC 
+        &kp W  &kp L  &kp Y          &kp P          &kp B          &kp Z        &kp F         &kp O     &kp U     &kp SQT
+        &kp C  &kp R  &kp S          &kp T          &kp G          &kp M        &kp N         &kp E     &kp I     &kp A
+        &kp Q  &kp J  &kp V          &kp D          &kp K          &kp X        &kp H         &kp FSLH  &commaco  &dotsemi
+                      &lt SYS ENTER  &lt NAV SPACE  &supershift    &supershift  &lsl NUM SYM  &bspcdel
       >;
     };
 
