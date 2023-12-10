@@ -470,7 +470,7 @@
       bindings = <
         &tgrave 0 GRAVE  &dpar 0 LPAR  &kp RPAR  &kp SEMI  &kp AT        &kp PRCNT  &kp AMPS       &kp PIPE   &kp UNDER  &kp PLUS
         &dbrc 0 LBRC     &kp SQT       &kp DQT   &kp RBRC  &kp EXCL      &kp STAR   &ltgt          &kp EQUAL  &kp MINUS  &kp GT
-        &kp LS(GRAVE)    &dbkt 0 LBKT  &kp RBKT  &kp DLLR  &kp RA(N3)    &kp CARET  &nline 0 BSLH  &kp COMMA  &kp DOS    &kp FSLH
+        &kp LS(GRAVE)    &dbkt 0 LBKT  &kp RBKT  &kp DLLR  &kp RA(N3)    &kp CARET  &nline 0 BSLH  &kp COMMA  &kp DOT    &kp FSLH
                                        &trans    &trans    &trans        &trans     &to BASE       &trans
       >;
     };
