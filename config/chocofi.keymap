@@ -445,7 +445,7 @@
       compatible = "zmk,behavior-mod-morph";
       label = "BSPC_DEL";
       #binding-cells = <0>;
-      bindings = <&bp BSPC, <&kp DEL>;
+      bindings = <&bp BSPC>, <&kp DEL>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     supershift: supershift {
